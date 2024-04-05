@@ -27,9 +27,9 @@ import com.itextpdf.layout.element.AreaBreak;
 
 public class printPDFReceipts extends frames {
 
-    public static final String path1 = "C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\PDF\\ATMReceipt.pdf";
-    public static final String path2 = "C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\PDF\\balanceReceipt.pdf";
-    public static final String path3 = "C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\PDF\\historyReceipt.pdf";
+    public static final String path1 = "C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\PDF\\ATMReceipt.pdf";
+    public static final String path2 = "C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\PDF\\balanceReceipt.pdf";
+    public static final String path3 = "C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\PDF\\historyReceipt.pdf";
 
     public static void printReceipt(String transactionType, String accountType, String refNo, String date, double amount, double balance) throws FileNotFoundException, MalformedURLException, IOException {
         PdfWriter writer = new PdfWriter(path1);

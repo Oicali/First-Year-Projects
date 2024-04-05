@@ -20,7 +20,7 @@ public class sounds {
 
     // Sound methods
     public static void playOpening() {
-        File file = new File("C:\\Users\\jairus\\Documents\\GitHub\\ATM\\BIT_ATM\\src\\ATM_resources\\Intro_sound.wav");
+        File file = new File("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\Intro_sound.wav");
 
         try {
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
@@ -37,7 +37,7 @@ public class sounds {
 
     public static void playError() {
         if (isUnmute) {
-            File file1 = new File("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\error.wav");
+            File file1 = new File("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\error.wav");
             try {
                 AudioInputStream audioStream = AudioSystem.getAudioInputStream(file1);
                 clip1 = AudioSystem.getClip();
@@ -56,7 +56,7 @@ public class sounds {
 
     public static void playWarning() {
         if (isUnmute) {
-            File file2 = new File("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\warning.wav");
+            File file2 = new File("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\warning.wav");
 
             try {
                 AudioInputStream audioStream = AudioSystem.getAudioInputStream(file2);
@@ -74,7 +74,7 @@ public class sounds {
 
     public static void playConfirm() {
         if (isUnmute) {
-            File file3 = new File("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\confirm.wav");
+            File file3 = new File("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\confirm.wav");
 
             try {
                 AudioInputStream audioStream = AudioSystem.getAudioInputStream(file3);
@@ -93,7 +93,7 @@ public class sounds {
     public static void playClick() {
 
         if (isUnmute) {
-            File file = new File("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\click.wav");
+            File file = new File("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\click.wav");
 
             try {
                 AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);

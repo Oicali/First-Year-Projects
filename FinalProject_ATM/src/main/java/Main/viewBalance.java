@@ -98,7 +98,7 @@ public class viewBalance extends frames {
         viewBalancePnl.add(lbl8);
 
         JLabel cancelBtn = new JLabel();
-        cancelBtn.setIcon(new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton.png"));
+        cancelBtn.setIcon(new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton.png"));
         cancelBtn.setBounds(15, 35, 55, 55);
         viewBalancePnl.add(cancelBtn);
 
@@ -118,7 +118,7 @@ public class viewBalance extends frames {
 
         JLabel viewBalanceBG = new JLabel();
         viewBalanceBG.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\viewBalanceBG.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\viewBalanceBG.png"));
         viewBalanceBG.setBounds(0, -15, 1050, 700);
         viewBalancePnl.add(viewBalanceBG);
 
@@ -139,17 +139,17 @@ public class viewBalance extends frames {
             public void mouseReleased(MouseEvent e) {
                 sfx.playWarning();
 
-                cancelBtn.setIcon(new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton.png"));
+                cancelBtn.setIcon(new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton.png"));
                 int choice = JOptionPane.showConfirmDialog(null, "Are you sure you want to cancel transaction?", "Cancel Transaction", JOptionPane.YES_NO_OPTION);
                 if (choice == JOptionPane.YES_OPTION) {
 
                     // Update volume icon
                     if (sounds.isUnmute) {
                         logIn.logInVolume.setIcon(
-                                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
+                                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
                     } else {
                         logIn.logInVolume.setIcon(
-                                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
+                                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
                     }
 
                     dispose();
@@ -160,13 +160,13 @@ public class viewBalance extends frames {
             @Override
             public void mouseEntered(MouseEvent e) {
                 cancelBtn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-                cancelBtn.setIcon(new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton2.png"));
+                cancelBtn.setIcon(new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton2.png"));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                 cancelBtn.setCursor(Cursor.getDefaultCursor());
-                cancelBtn.setIcon(new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton.png"));
+                cancelBtn.setIcon(new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton.png"));
             }
         });
 
@@ -189,11 +189,11 @@ public class viewBalance extends frames {
                 // Update volume icon
                 if (sounds.isUnmute) {
                     typeAccount.typeAccountVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
 
                 } else {
                     typeAccount.typeAccountVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
                 }
 
                 dispose();
@@ -251,11 +251,11 @@ public class viewBalance extends frames {
                                 // Update volume Icon
                                 if (sounds.isUnmute) {
                                     logIn.logInVolume.setIcon(
-                                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
+                                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
 
                                 } else {
                                     logIn.logInVolume.setIcon(
-                                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
+                                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
                                 }
                                 
                                 FinalProject_ATM.logInFrame.show();
@@ -281,7 +281,7 @@ public class viewBalance extends frames {
     // Add mute features
     private static void addVolumeEffects(JPanel panel) {
         viewBalanceVolume.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
         viewBalanceVolume.setBounds(980, 620, 40, 40);
         panel.add(viewBalanceVolume);
 
@@ -300,12 +300,12 @@ public class viewBalance extends frames {
             public void mouseReleased(MouseEvent e) {
                 if (sounds.isUnmute) {
                     viewBalanceVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
 
                     sounds.isUnmute = false;
                 } else {
                     viewBalanceVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
                     sounds.isUnmute = true;
                     sfx.playWarning();
                 }

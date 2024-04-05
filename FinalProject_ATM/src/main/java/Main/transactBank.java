@@ -34,25 +34,25 @@ public class transactBank extends frames {
         transactBankPnl.add(lbl1);
         
         JLabel cancelBtn = new JLabel();
-        cancelBtn.setIcon(new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton.png"));
+        cancelBtn.setIcon(new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton.png"));
         cancelBtn.setBounds(15, 35, 55, 55);
         transactBankPnl.add(cancelBtn);
         
         JLabel UBBtn = new JLabel();
         UBBtn.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\UBButton.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\UBButton.png"));
         UBBtn.setBounds(535, 145,365, 70);
         transactBankPnl.add(UBBtn);
         
         JLabel BPIBtn = new JLabel();
         BPIBtn.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\BPIButton.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\BPIButton.png"));
         BPIBtn.setBounds(535, 265,365, 70);
         transactBankPnl.add(BPIBtn);
         
         JLabel BDOBtn = new JLabel();
         BDOBtn.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\BDOButton.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\BDOButton.png"));
         BDOBtn.setBounds(535, 385,365, 70);
         transactBankPnl.add(BDOBtn);
         
@@ -66,7 +66,7 @@ public class transactBank extends frames {
         
         JLabel transactBankBG = new JLabel();
         transactBankBG.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\transaction2BG.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\transaction2BG.png"));
         transactBankBG.setBounds(0, -15, 1050, 700);
         transactBankPnl.add(transactBankBG);
         
@@ -88,18 +88,18 @@ public class transactBank extends frames {
             public void mouseReleased(MouseEvent e) {
                 sfx.playWarning();
 
-                cancelBtn.setIcon(new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton.png"));
+                cancelBtn.setIcon(new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton.png"));
                 int choice = JOptionPane.showConfirmDialog(null, "Are you sure you want to cancel transaction?", "Cancel Transaction", JOptionPane.YES_NO_OPTION);
                 if (choice == JOptionPane.YES_OPTION) {
 
                     // Update volume icon
                     if(sounds.isUnmute){
                         logIn.logInVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
                     
                     } else {
                         logIn.logInVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
                     }
                     
                     bankName = "";
@@ -112,13 +112,13 @@ public class transactBank extends frames {
             @Override
             public void mouseEntered(MouseEvent e) {
                 cancelBtn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-                cancelBtn.setIcon(new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton2.png"));
+                cancelBtn.setIcon(new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton2.png"));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                 cancelBtn.setCursor(Cursor.getDefaultCursor());
-                cancelBtn.setIcon(new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton.png"));
+                cancelBtn.setIcon(new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton.png"));
             }
         });
         
@@ -142,16 +142,16 @@ public class transactBank extends frames {
                 bankName = "UB";
                 
                 UBBtn.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\UBButton.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\UBButton.png"));
                 
                 // Update volume icon
                     if(sounds.isUnmute){
                         typeAccount.typeAccountVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
                     
                     } else {
                         typeAccount.typeAccountVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
                     }
 
                 dispose();
@@ -163,14 +163,14 @@ public class transactBank extends frames {
             public void mouseEntered(MouseEvent e) {
                 UBBtn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
                 UBBtn.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\UBButton2.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\UBButton2.png"));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                UBBtn.setCursor(Cursor.getDefaultCursor());
                UBBtn.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\UBButton.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\UBButton.png"));
             }
         });
         
@@ -194,16 +194,16 @@ public class transactBank extends frames {
                 bankName = "BPI";
                 
                 BPIBtn.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\BPIButton.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\BPIButton.png"));
                 
                 // Update volume icon
                     if(sounds.isUnmute){
                         typeAccount.typeAccountVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
                     
                     } else {
                         typeAccount.typeAccountVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
                     }
 
                 dispose();
@@ -215,14 +215,14 @@ public class transactBank extends frames {
             public void mouseEntered(MouseEvent e) {
                 BPIBtn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
                 BPIBtn.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\BPIButton2.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\BPIButton2.png"));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                BPIBtn.setCursor(Cursor.getDefaultCursor());
                BPIBtn.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\BPIButton.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\BPIButton.png"));
             }
         });
         
@@ -246,16 +246,16 @@ public class transactBank extends frames {
                 bankName = "BDO";
                 
                 BDOBtn.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\BDOButton.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\BDOButton.png"));
                 
                 // Update volume icon
                     if(sounds.isUnmute){
                         typeAccount.typeAccountVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
                     
                     } else {
                         typeAccount.typeAccountVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
                     }
 
                 dispose();
@@ -267,14 +267,14 @@ public class transactBank extends frames {
             public void mouseEntered(MouseEvent e) {
                 BDOBtn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
                 BDOBtn.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\BDOButton2.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\BDOButton2.png"));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                BDOBtn.setCursor(Cursor.getDefaultCursor());
                BDOBtn.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\BDOButton.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\BDOButton.png"));
             }
         });
         
@@ -298,11 +298,11 @@ public class transactBank extends frames {
                 // Update volume icon
                     if(sounds.isUnmute){
                         transaction.transactionVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
                     
                     } else {
                         transaction.transactionVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
                     }
                 
                 dispose();
@@ -326,7 +326,7 @@ public class transactBank extends frames {
     // Add mute features
     private static void addVolumeEffects(JPanel panel) {
         transactBankVolume.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
         transactBankVolume.setBounds(980, 620, 40, 40);
         panel.add(transactBankVolume);
 
@@ -345,12 +345,12 @@ public class transactBank extends frames {
             public void mouseReleased(MouseEvent e) {
                 if (sounds.isUnmute) {
                     transactBankVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
 
                     sounds.isUnmute = false;
                 } else {
                     transactBankVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
                     sounds.isUnmute = true;
                     sfx.playWarning();
                 }

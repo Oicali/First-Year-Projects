@@ -11,7 +11,7 @@ import javax.swing.*;
 public class progressScreen extends JFrame {
     public static JProgressBar bar = new JProgressBar();
     JPanel Pnl = new JPanel();
-    ImageIcon image = new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\Logo.png");
+    ImageIcon image = new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\Logo.png");
     
     public progressScreen(){
         
@@ -45,7 +45,7 @@ public class progressScreen extends JFrame {
         
         JLabel BG = new JLabel();
         BG.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\splashScreen.gif"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\splashScreen.gif"));
         BG.setBounds(0, 0, 700, 400);
         Pnl.add(BG);
         

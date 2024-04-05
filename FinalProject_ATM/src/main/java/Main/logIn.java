@@ -40,7 +40,7 @@ public class logIn extends frames {
 
         JLabel logo = new JLabel();
         logo.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\logo2.png"));
+                new ImageIcon("\\FinalProject_ATM\\src\\main\\java\\resources\\logo2.png"));
         logo.setBounds(712, 135, 110, 110);
         logInPnl.add(logo);
 
@@ -80,13 +80,13 @@ public class logIn extends frames {
         JLabel cancelBtn = new JLabel();
         cancelBtn.setIcon(
                 new ImageIcon(
-                        "C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton.png"));
+                        "C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton.png"));
         cancelBtn.setBounds(15, 34, 55, 55);
         logInPnl.add(cancelBtn);
 
         JLabel logInBG = new JLabel();
         logInBG.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\logIn_BG.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\logIn_BG.png"));
         logInBG.setBounds(0, -15, 1050, 700);
         logInPnl.add(logInBG);
 
@@ -323,7 +323,7 @@ public class logIn extends frames {
             public void mouseReleased(MouseEvent e) {
                 sfx.playWarning();
 
-                cancelBtn.setIcon(new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton.png"));
+                cancelBtn.setIcon(new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton.png"));
                 int choice = JOptionPane.showConfirmDialog(null, "Are you sure you want to end transaction?",
                         "Exit Confirmation", JOptionPane.YES_NO_OPTION);
                 if (choice == JOptionPane.YES_OPTION) {
@@ -336,7 +336,7 @@ public class logIn extends frames {
                 cancelBtn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
                 cancelBtn.setIcon(
                         new ImageIcon(
-                                "C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton2.png"));
+                                "C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton2.png"));
             }
 
             @Override
@@ -344,7 +344,7 @@ public class logIn extends frames {
                 cancelBtn.setCursor(Cursor.getDefaultCursor());
                 cancelBtn.setIcon(
                         new ImageIcon(
-                                "C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton.png"));
+                                "C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\cancelButton.png"));
             }
         });
 
@@ -422,11 +422,11 @@ public class logIn extends frames {
             // Update volume icon
             if (sounds.isUnmute) {
                 transaction.transactionVolume.setIcon(
-                        new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
+                        new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
 
             } else {
                 transaction.transactionVolume.setIcon(
-                        new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
+                        new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
             }
 
             FinalProject_ATM.logInFrame.dispose();
@@ -448,7 +448,7 @@ public class logIn extends frames {
     // Add mute features
     private static void addVolumeEffects(JPanel panel) {
         logInVolume.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
         logInVolume.setBounds(980, 620, 40, 40);
         panel.add(logInVolume);
 
@@ -467,13 +467,13 @@ public class logIn extends frames {
             public void mouseReleased(MouseEvent e) {
                 if (sounds.isUnmute) {
                     logInVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
 
                     sounds.isUnmute = false;
 
                 } else {
                     logInVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
                     sounds.isUnmute = true;
                     sfx.playWarning();
                 }

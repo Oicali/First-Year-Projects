@@ -15,7 +15,7 @@ public class frames extends JFrame {
     // Global variables
     public static DecimalFormat format = new DecimalFormat("##,###,###,###,##0.00");
     public static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm");
-    ImageIcon image = new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\Logo.png");
+    ImageIcon image = new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\Logo.png");
     
     
     // Default frame settings

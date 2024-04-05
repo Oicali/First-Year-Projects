@@ -183,7 +183,7 @@ public class viewReceipt extends frames {
 
         JLabel viewReceiptBG = new JLabel();
         viewReceiptBG.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\viewReceiptBG.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\viewReceiptBG.png"));
         viewReceiptBG.setBounds(0, -15, 1050, 700);
         viewReceiptPnl.add(viewReceiptBG);
 
@@ -192,7 +192,7 @@ public class viewReceipt extends frames {
     // Add mute features
     private static void addVolumeEffects(JPanel panel) {
         viewReceiptVolume.setIcon(
-                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
+                new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
         viewReceiptVolume.setBounds(980, 620, 40, 40);
         panel.add(viewReceiptVolume);
 
@@ -211,13 +211,13 @@ public class viewReceipt extends frames {
             public void mouseReleased(MouseEvent e) {
                 if (sounds.isUnmute) {
                     viewReceiptVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\mute.png"));
 
                     sounds.isUnmute = false;
 
                 } else {
                     viewReceiptVolume.setIcon(
-                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\INF234\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
+                            new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\FinalProject_ATM\\src\\main\\java\\resources\\unmute.png"));
                     sounds.isUnmute = true;
                     sfx.playWarning();
                 }
