@@ -12,7 +12,7 @@ public class ImageIconExample {
         JLabel imageLabel = new JLabel();
 
         // Load the image using getResource() (assuming the image is in the classpath)
-        ImageIcon icon = new ImageIcon(ImageIconExample.class.getResource("/image.jpg"));
+        ImageIcon icon = new ImageIcon(ImageIconExample.class.getResource("/images.jpg"));
         imageLabel.setIcon(icon);
 
         // Add the JLabel to the frame
