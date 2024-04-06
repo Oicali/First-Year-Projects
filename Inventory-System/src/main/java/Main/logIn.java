@@ -4,17 +4,25 @@
  */
 package Main;
 
+import java.awt.Color;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author jairus
  */
 public class logIn extends javax.swing.JFrame {
 
+    ImageIcon image = new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\Inventory-System\\src\\main\\java\\resources\\logoSmall.png");
+
     /**
      * Creates new form logIn
      */
     public logIn() {
         initComponents();
+        setIconImage(image.getImage());
+        passField.setEchoChar('•');
+        //userField.setEchoChar((char)0);
     }
 
     /**
@@ -26,21 +34,160 @@ public class logIn extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        userIcon = new javax.swing.JLabel();
+        userField = new settings.TextField();
+        forgotUser = new javax.swing.JButton();
+        passField = new settings.PasswordField();
+        forgotPass = new javax.swing.JButton();
+        License = new javax.swing.JButton();
+        signInBtn = new settings.RoundedButtons();
+        showPass = new settings.JCheckBoxCustom();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sign In");
+        setMinimumSize(new java.awt.Dimension(1080, 750));
+        setPreferredSize(new java.awt.Dimension(1080, 750));
+        setResizable(false);
+        getContentPane().setLayout(null);
+
+        jPanel2.setBackground(new java.awt.Color(15, 106, 191));
+        jPanel2.setLayout(null);
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 40)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Sign In to your Account");
+        jPanel2.add(jLabel1);
+        jLabel1.setBounds(50, 150, 550, 110);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\Inventory-System\\src\\main\\java\\resources\\logInBg.png")); // NOI18N
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(0, -10, 670, 770);
+
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(420, 0, 670, 750);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(null);
+
+        userIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\Inventory-System\\src\\main\\java\\resources\\logInUser.png")); // NOI18N
+        jPanel1.add(userIcon);
+        userIcon.setBounds(150, 110, 120, 120);
+
+        userField.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        userField.setSelectionColor(new java.awt.Color(204, 204, 204));
+        userField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userFieldActionPerformed(evt);
+            }
+        });
+        jPanel1.add(userField);
+        userField.setBounds(40, 290, 330, 60);
+
+        forgotUser.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        forgotUser.setForeground(new java.awt.Color(153, 153, 153));
+        forgotUser.setText("Forgot Username?");
+        forgotUser.setBorderPainted(false);
+        forgotUser.setContentAreaFilled(false);
+        forgotUser.setFocusPainted(false);
+        forgotUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                forgotUserActionPerformed(evt);
+            }
+        });
+        jPanel1.add(forgotUser);
+        forgotUser.setBounds(250, 360, 140, 26);
+
+        passField.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        passField.setSelectionColor(new java.awt.Color(204, 204, 204));
+        jPanel1.add(passField);
+        passField.setBounds(40, 400, 330, 60);
+
+        forgotPass.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        forgotPass.setForeground(new java.awt.Color(153, 153, 153));
+        forgotPass.setText("Forgot Password?");
+        forgotPass.setBorderPainted(false);
+        forgotPass.setContentAreaFilled(false);
+        forgotPass.setFocusPainted(false);
+        forgotPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                forgotPassActionPerformed(evt);
+            }
+        });
+        jPanel1.add(forgotPass);
+        forgotPass.setBounds(250, 470, 140, 26);
+
+        License.setFont(new java.awt.Font("SansSerif", 2, 12)); // NOI18N
+        License.setForeground(new java.awt.Color(153, 153, 153));
+        License.setText("@2024 Mark-It!");
+        License.setBorderPainted(false);
+        License.setContentAreaFilled(false);
+        License.setFocusPainted(false);
+        License.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LicenseActionPerformed(evt);
+            }
+        });
+        jPanel1.add(License);
+        License.setBounds(140, 720, 140, 26);
+
+        signInBtn.setForeground(new java.awt.Color(40, 72, 172));
+        signInBtn.setText("Sign In");
+        signInBtn.setBorderColor(new java.awt.Color(40, 72, 102));
+        signInBtn.setBorderPainted(false);
+        signInBtn.setColorClick(new java.awt.Color(153, 153, 153));
+        signInBtn.setColorOver(new java.awt.Color(204, 204, 204));
+        signInBtn.setFocusPainted(false);
+        signInBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jPanel1.add(signInBtn);
+        signInBtn.setBounds(120, 590, 160, 40);
+
+        showPass.setForeground(new java.awt.Color(153, 153, 153));
+        showPass.setText(" Show Password");
+        showPass.setFocusPainted(false);
+        showPass.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        showPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showPassActionPerformed(evt);
+            }
+        });
+        jPanel1.add(showPass);
+        showPass.setBounds(40, 474, 160, 23);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, -40, 420, 790);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void forgotUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_forgotUserActionPerformed
+
+    private void LicenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LicenseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LicenseActionPerformed
+
+    private void userFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userFieldActionPerformed
+
+    private void forgotPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotPassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_forgotPassActionPerformed
+
+    private void showPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPassActionPerformed
+        
+        if(showPass.isSelected()){
+            passField.setEchoChar((char) 0);
+        } else passField.setEchoChar('•');
+        
+    }//GEN-LAST:event_showPassActionPerformed
 
     /**
      * @param args the command line arguments
@@ -68,16 +215,31 @@ public class logIn extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(logIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
+
                 new logIn().setVisible(true);
+
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton License;
+    private javax.swing.JButton forgotPass;
+    private javax.swing.JButton forgotUser;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private settings.PasswordField passField;
+    private settings.JCheckBoxCustom showPass;
+    private settings.RoundedButtons signInBtn;
+    private settings.TextField userField;
+    private javax.swing.JLabel userIcon;
     // End of variables declaration//GEN-END:variables
 }

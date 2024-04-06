@@ -64,14 +64,14 @@ public class progressScreen extends javax.swing.JDialog {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Mark-It!");
         curvesPanel1.add(jLabel2);
-        jLabel2.setBounds(180, 140, 190, 80);
+        jLabel2.setBounds(180, 150, 190, 50);
 
-        jLabel3.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Gill Sans MT", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Inventory System");
         curvesPanel1.add(jLabel3);
-        jLabel3.setBounds(190, 200, 170, 22);
+        jLabel3.setBounds(188, 200, 170, 22);
 
         bar.setBackground(new java.awt.Color(15, 106, 191));
         bar.setForeground(new java.awt.Color(255, 255, 255));
@@ -81,7 +81,7 @@ public class progressScreen extends javax.swing.JDialog {
         bar.setBounds(100, 250, 350, 5);
 
         lblStatus.setBackground(new java.awt.Color(255, 255, 255));
-        lblStatus.setFont(new java.awt.Font("Lucida Sans", 0, 10)); // NOI18N
+        lblStatus.setFont(new java.awt.Font("SansSerif", 2, 12)); // NOI18N
         lblStatus.setForeground(new java.awt.Color(255, 255, 255));
         lblStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblStatus.setText("Status ...");
