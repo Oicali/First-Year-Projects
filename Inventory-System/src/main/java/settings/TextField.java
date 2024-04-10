@@ -5,19 +5,16 @@
 package settings;
 
 import java.awt.Color;
-import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Insets;
-import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionAdapter;
 import java.awt.geom.Rectangle2D;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -27,22 +24,12 @@ import org.jdesktop.animation.timing.TimingTargetAdapter;
 
 public class TextField extends JTextField {
 
-    public boolean isShowAndHide() {
-        return showAndHide;
-    }
-
-    public void setShowAndHide(boolean showAndHide) {
-        this.showAndHide = showAndHide;
-        repaint();
-    }
-
     public String getLabelText() {
         return labelText;
     }
 
     public void setLabelText(String labelText) {
         this.labelText = labelText;
-        repaint();
     }
 
     public Color getLineColor() {
@@ -51,20 +38,19 @@ public class TextField extends JTextField {
 
     public void setLineColor(Color lineColor) {
         this.lineColor = lineColor;
-        repaint();
     }
 
     private final Animator animator;
-    private boolean animateHintText = true;
+    private boolean animateHinText = true;
     private float location;
     private boolean show;
     private boolean mouseOver = false;
     private String labelText = "Enter your username";
     private Color lineColor = new Color(3, 155, 216);
-    private boolean showAndHide;
 
     public TextField() {
-        setBorder(new EmptyBorder(20, 3, 10, 30));
+        setBorder(new EmptyBorder(20, 3, 10, 3)); // Adjust padding here
+        setFont(new Font("SansSerif", Font.PLAIN, 14)); // Set font for text field
         setSelectionColor(new Color(76, 204, 255));
         addMouseListener(new MouseAdapter() {
             @Override
@@ -78,17 +64,6 @@ public class TextField extends JTextField {
                 mouseOver = false;
                 repaint();
             }
-
-            @Override
-            public void mousePressed(MouseEvent me) {
-                if (showAndHide) {
-                    int x = getWidth() - 30;
-                    if (new Rectangle(x, 0, 30, 30).contains(me.getPoint())) {
-                        // Show/Hide functionality can be implemented here if needed
-                        repaint();
-                    }
-                }
-            }
         });
         addFocusListener(new FocusAdapter() {
             @Override
@@ -101,23 +76,10 @@ public class TextField extends JTextField {
                 showing(true);
             }
         });
-        addMouseMotionListener(new MouseMotionAdapter() {
-            @Override
-            public void mouseMoved(MouseEvent me) {
-                if (showAndHide) {
-                    int x = getWidth() - 30;
-                    if (new Rectangle(x, 0, 30, 30).contains(me.getPoint())) {
-                        setCursor(new Cursor(Cursor.HAND_CURSOR));
-                    } else {
-                        setCursor(new Cursor(Cursor.TEXT_CURSOR));
-                    }
-                }
-            }
-        });
         TimingTarget target = new TimingTargetAdapter() {
             @Override
             public void begin() {
-                animateHintText = String.valueOf(getText()).equals("");
+                animateHinText = getText().equals("");
             }
 
             @Override
@@ -125,6 +87,7 @@ public class TextField extends JTextField {
                 location = fraction;
                 repaint();
             }
+
         };
         animator = new Animator(300, target);
         animator.setResolution(0);
@@ -166,23 +129,21 @@ public class TextField extends JTextField {
     private void createHintText(Graphics2D g2) {
         Insets in = getInsets();
         g2.setColor(new Color(150, 150, 150));
-        Font font = new Font("SansSerif", Font.PLAIN, 16);
-        g2.setFont(font);
-        FontMetrics ft = g2.getFontMetrics();
+        FontMetrics ft = g2.getFontMetrics(new Font("SansSerif", Font.PLAIN, 12)); // Set font size for label text
         Rectangle2D r2 = ft.getStringBounds(labelText, g2);
         double height = getHeight() - in.top - in.bottom;
-        double textY = (height - r2.getHeight()) / 2 - 10; 
+        double textY = (height - r2.getHeight()) / 2 - 3;
         double size;
-        if (animateHintText) {
+        if (animateHinText) {
             if (show) {
-                size = 18 * (0.5 - location); 
+                size = 18 * (1 - location);
             } else {
                 size = 18 * location;
             }
         } else {
             size = 18;
         }
-        g2.drawString(labelText, in.left, (int) (in.top + textY + ft.getAscent() - size));
+        g2.drawString(labelText, in.right, (int) (in.top + textY + ft.getAscent() - size));
     }
 
     private void createLineStyle(Graphics2D g2) {
@@ -203,11 +164,10 @@ public class TextField extends JTextField {
 
     @Override
     public void setText(String string) {
-        if (!String.valueOf(getText()).equals(string)) {
+        if (!getText().equals(string)) {
             showing(string.equals(""));
         }
         super.setText(string);
     }
 }
-
 

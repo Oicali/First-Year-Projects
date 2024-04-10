@@ -39,16 +39,17 @@ public class logIn extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         userIcon = new javax.swing.JLabel();
-        userField = new settings.TextField();
         forgotUser = new javax.swing.JButton();
-        passField = new settings.PasswordField();
         forgotPass = new javax.swing.JButton();
         License = new javax.swing.JButton();
         signInBtn = new settings.RoundedButtons();
         showPass = new settings.JCheckBoxCustom();
+        textField = new settings.TextField();
+        passField = new settings.PasswordField();
+        signedIn = new settings.Combobox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Sign In");
+        setTitle("Log In");
         setMinimumSize(new java.awt.Dimension(1080, 750));
         setPreferredSize(new java.awt.Dimension(1080, 750));
         setResizable(false);
@@ -60,7 +61,7 @@ public class logIn extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 40)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Sign In to your Account");
+        jLabel1.setText("Log In to your Account");
         jPanel2.add(jLabel1);
         jLabel1.setBounds(50, 150, 550, 110);
 
@@ -78,16 +79,6 @@ public class logIn extends javax.swing.JFrame {
         jPanel1.add(userIcon);
         userIcon.setBounds(150, 110, 120, 120);
 
-        userField.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        userField.setSelectionColor(new java.awt.Color(204, 204, 204));
-        userField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userFieldActionPerformed(evt);
-            }
-        });
-        jPanel1.add(userField);
-        userField.setBounds(40, 290, 330, 60);
-
         forgotUser.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         forgotUser.setForeground(new java.awt.Color(153, 153, 153));
         forgotUser.setText("Forgot Username?");
@@ -100,12 +91,7 @@ public class logIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(forgotUser);
-        forgotUser.setBounds(250, 360, 140, 26);
-
-        passField.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        passField.setSelectionColor(new java.awt.Color(204, 204, 204));
-        jPanel1.add(passField);
-        passField.setBounds(40, 400, 330, 60);
+        forgotUser.setBounds(250, 340, 140, 26);
 
         forgotPass.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         forgotPass.setForeground(new java.awt.Color(153, 153, 153));
@@ -119,7 +105,7 @@ public class logIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(forgotPass);
-        forgotPass.setBounds(250, 470, 140, 26);
+        forgotPass.setBounds(250, 440, 140, 26);
 
         License.setFont(new java.awt.Font("SansSerif", 2, 12)); // NOI18N
         License.setForeground(new java.awt.Color(153, 153, 153));
@@ -136,15 +122,15 @@ public class logIn extends javax.swing.JFrame {
         License.setBounds(140, 720, 140, 26);
 
         signInBtn.setForeground(new java.awt.Color(40, 72, 172));
-        signInBtn.setText("Sign In");
-        signInBtn.setBorderColor(new java.awt.Color(40, 72, 102));
+        signInBtn.setText("Log In");
+        signInBtn.setBorderColor(new java.awt.Color(15, 106, 191));
         signInBtn.setBorderPainted(false);
         signInBtn.setColorClick(new java.awt.Color(153, 153, 153));
         signInBtn.setColorOver(new java.awt.Color(204, 204, 204));
         signInBtn.setFocusPainted(false);
         signInBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jPanel1.add(signInBtn);
-        signInBtn.setBounds(120, 590, 160, 40);
+        signInBtn.setBounds(130, 640, 160, 40);
 
         showPass.setForeground(new java.awt.Color(153, 153, 153));
         showPass.setText(" Show Password");
@@ -156,7 +142,23 @@ public class logIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(showPass);
-        showPass.setBounds(40, 474, 160, 23);
+        showPass.setBounds(40, 443, 160, 23);
+
+        textField.setSelectionColor(new java.awt.Color(204, 204, 204));
+        jPanel1.add(textField);
+        textField.setBounds(40, 280, 330, 49);
+
+        passField.setSelectionColor(new java.awt.Color(204, 204, 204));
+        jPanel1.add(passField);
+        passField.setBounds(40, 380, 330, 49);
+
+        signedIn.setMaximumRowCount(3);
+        signedIn.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Employee", "Supervisor", "Administrator" }));
+        signedIn.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        signedIn.setLabelText("Log in as");
+        signedIn.setOpaque(false);
+        jPanel1.add(signedIn);
+        signedIn.setBounds(40, 510, 330, 45);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, -40, 420, 790);
@@ -173,16 +175,12 @@ public class logIn extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_LicenseActionPerformed
 
-    private void userFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_userFieldActionPerformed
-
     private void forgotPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotPassActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_forgotPassActionPerformed
 
     private void showPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPassActionPerformed
-        
+ 
         if(showPass.isSelected()){
             passField.setEchoChar((char) 0);
         } else passField.setEchoChar('•');
@@ -239,7 +237,8 @@ public class logIn extends javax.swing.JFrame {
     private settings.PasswordField passField;
     private settings.JCheckBoxCustom showPass;
     private settings.RoundedButtons signInBtn;
-    private settings.TextField userField;
+    private settings.Combobox signedIn;
+    private settings.TextField textField;
     private javax.swing.JLabel userIcon;
     // End of variables declaration//GEN-END:variables
 }

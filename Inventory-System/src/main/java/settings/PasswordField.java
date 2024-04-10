@@ -64,7 +64,8 @@ public class PasswordField extends JPasswordField {
     private boolean showAndHide;
 
     public PasswordField() {
-        setBorder(new EmptyBorder(20, 3, 10, 30));
+        setBorder(new EmptyBorder(20, 3, 10, 3));
+        setFont(new Font("SansSerif", Font.PLAIN, 14)); // Set font for password field
         setSelectionColor(new Color(76, 204, 255));
         addMouseListener(new MouseAdapter() {
             @Override
@@ -166,16 +167,14 @@ public class PasswordField extends JPasswordField {
     private void createHintText(Graphics2D g2) {
         Insets in = getInsets();
         g2.setColor(new Color(150, 150, 150));
-        Font font = new Font("SansSerif", Font.PLAIN, 16);
-        g2.setFont(font);
-        FontMetrics ft = g2.getFontMetrics();
+        FontMetrics ft = g2.getFontMetrics(new Font("SansSerif", Font.PLAIN, 12));
         Rectangle2D r2 = ft.getStringBounds(labelText, g2);
         double height = getHeight() - in.top - in.bottom;
-        double textY = (height - r2.getHeight()) / 2 - 10; 
+        double textY = (height - r2.getHeight()) / 2 - 3; 
         double size;
         if (animateHintText) {
             if (show) {
-                size = 18 * (0.5 - location); 
+                size = 18 * (1 - location); 
             } else {
                 size = 18 * location;
             }
@@ -209,5 +208,4 @@ public class PasswordField extends JPasswordField {
         super.setText(string);
     }
 }
-
 
