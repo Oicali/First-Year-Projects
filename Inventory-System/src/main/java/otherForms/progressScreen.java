@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package settings;
+package otherForms;
 
 import java.awt.Color;
 import javax.swing.JDialog;
@@ -40,7 +40,6 @@ public class progressScreen extends javax.swing.JDialog {
         lblStatus = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(550, 350));
         setMinimumSize(new java.awt.Dimension(550, 350));
         setUndecorated(true);
         setResizable(false);
