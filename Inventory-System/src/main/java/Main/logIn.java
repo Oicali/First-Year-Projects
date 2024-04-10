@@ -8,22 +8,85 @@ import java.awt.Color;
 import java.sql.*;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.plaf.metal.MetalButtonUI;
 
-/**
- *
- * @author jairus
- */
 public class logIn extends javax.swing.JFrame {
 
     ImageIcon image = new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\Inventory-System\\src\\main\\java\\resources\\logoSmall.png");
-    public static boolean isAdmin = false;
+    public static boolean isUserEmpty = true;
+    public static boolean isPassEmpty = true;
+    
 
     public logIn() {
         initComponents();
         setIconImage(image.getImage());
         passField.setEchoChar('•');
         
+        logInBtn.setUI(new MetalButtonUI() {
+            protected Color getDisabledTextColor() {
+                return new Color(15, 106, 191);
+            }
+        });
+        
+         usernameField.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                updateLoginButton();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                updateLoginButton();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                updateLoginButton();
+            }
+
+            // Method to enable/disable the login button based on the PIN length
+            private void updateLoginButton() {
+                
+                String usernameText = usernameField.getText().trim();
+                if(usernameText.length()==0){
+                    isUserEmpty = true;
+                } else isUserEmpty = false;
+                
+                logInBtn.setEnabled(!isUserEmpty && !isPassEmpty);
+            }
+        });
+        
+        passField.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                updateLoginButton();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                updateLoginButton();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                updateLoginButton();
+            }
+
+            // Method to enable/disable the login button based on the PIN length
+            private void updateLoginButton() {
+                
+                String passText = passField.getText().trim();
+                if(passText.length()==0){
+                    isPassEmpty = true;
+                } else isPassEmpty = false;
+                
+                logInBtn.setEnabled(!isUserEmpty && !isPassEmpty);
+            }
+        });
+        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -139,10 +202,22 @@ public class logIn extends javax.swing.JFrame {
                 selectRoleMousePressed(evt);
             }
         });
+        selectRole.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectRoleActionPerformed(evt);
+            }
+        });
         jPanel1.add(selectRole);
-        selectRole.setBounds(40, 470, 330, 49);
+        selectRole.setBounds(40, 480, 330, 49);
 
+        logInBtn.setForeground(new java.awt.Color(15, 106, 191));
         logInBtn.setText("Log In");
+        logInBtn.setBorderColor(new java.awt.Color(15, 106, 191));
+        logInBtn.setBorderPainted(false);
+        logInBtn.setColorClick(new java.awt.Color(153, 153, 153));
+        logInBtn.setColorOver(new java.awt.Color(204, 204, 204));
+        logInBtn.setEnabled(false);
+        logInBtn.setFocusPainted(false);
         logInBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         logInBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,10 +225,11 @@ public class logIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(logInBtn);
-        logInBtn.setBounds(130, 650, 160, 40);
+        logInBtn.setBounds(120, 620, 170, 40);
 
         showPass.setForeground(new java.awt.Color(153, 153, 153));
         showPass.setText("Show Password");
+        showPass.setFocusPainted(false);
         showPass.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         showPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -239,6 +315,10 @@ public class logIn extends javax.swing.JFrame {
         }
         logInErrorMessage.setText("");
     }//GEN-LAST:event_showPassActionPerformed
+
+    private void selectRoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectRoleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_selectRoleActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
