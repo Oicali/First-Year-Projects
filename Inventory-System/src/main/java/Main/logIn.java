@@ -172,7 +172,7 @@ public class logIn extends javax.swing.JFrame {
         logInErrorMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logInErrorMessage.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel1.add(logInErrorMessage);
-        logInErrorMessage.setBounds(100, 570, 210, 15);
+        logInErrorMessage.setBounds(100, 560, 210, 15);
 
         passField.setSelectionColor(new java.awt.Color(204, 204, 204));
         passField.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -208,7 +208,7 @@ public class logIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(selectRole);
-        selectRole.setBounds(40, 480, 330, 49);
+        selectRole.setBounds(40, 470, 330, 49);
 
         logInBtn.setForeground(new java.awt.Color(15, 106, 191));
         logInBtn.setText("Log In");
