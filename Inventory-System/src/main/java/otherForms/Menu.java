@@ -19,11 +19,11 @@ public class Menu extends javax.swing.JPanel {
     public Menu() {
         initComponents();
         setOpaque(false);
-        //listMenu1.setOpaque(false);
-        //init();
+        listMenu1.setOpaque(false);
+        init();
     }
     
-    /*private void init(){
+    private void init(){
         listMenu1.addItem(new Model_Menu("1", "Dashboard", Model_Menu.MenuType.MENU));
         listMenu1.addItem(new Model_Menu("2", "Categories", Model_Menu.MenuType.MENU));
         listMenu1.addItem(new Model_Menu("3", "Products", Model_Menu.MenuType.MENU));
@@ -31,8 +31,11 @@ public class Menu extends javax.swing.JPanel {
         listMenu1.addItem(new Model_Menu("5", "View Order", Model_Menu.MenuType.MENU));
         listMenu1.addItem(new Model_Menu("6", "Customers", Model_Menu.MenuType.MENU));
         listMenu1.addItem(new Model_Menu("7", "Users", Model_Menu.MenuType.MENU));
-        listMenu1.addItem(new Model_Menu("8", "Log out", Model_Menu.MenuType.MENU));
-    }*/
+        listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
+        listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
+        listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
+        listMenu1.addItem(new Model_Menu("8", "Log Out", Model_Menu.MenuType.MENU));
+    }
     
     
 
@@ -43,6 +46,7 @@ public class Menu extends javax.swing.JPanel {
         PanelMoving = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        listMenu1 = new settings.ListMenu<>();
 
         setPreferredSize(new java.awt.Dimension(250, 700));
 
@@ -66,6 +70,7 @@ public class Menu extends javax.swing.JPanel {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addContainerGap(77, Short.MAX_VALUE))
+            .addComponent(listMenu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         PanelMovingLayout.setVerticalGroup(
             PanelMovingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -74,7 +79,9 @@ public class Menu extends javax.swing.JPanel {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGap(41, 41, 41)
+                .addComponent(listMenu1, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -87,7 +94,7 @@ public class Menu extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(PanelMoving, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(516, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -128,5 +135,6 @@ public class Menu extends javax.swing.JPanel {
     private javax.swing.JPanel PanelMoving;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private settings.ListMenu<String> listMenu1;
     // End of variables declaration//GEN-END:variables
 }

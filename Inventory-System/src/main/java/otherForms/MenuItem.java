@@ -14,6 +14,7 @@ public class MenuItem extends javax.swing.JPanel {
      * Creates new form MenuItem
      */
     private boolean selected;
+    private boolean over;
 
     public MenuItem(Model_Menu data) {
         initComponents();
@@ -38,6 +39,11 @@ public class MenuItem extends javax.swing.JPanel {
         this.selected = selected;
         repaint();
     }
+    
+    public void setOver(boolean over){
+        this.over = over;
+        repaint();
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -48,7 +54,7 @@ public class MenuItem extends javax.swing.JPanel {
 
         setOpaque(false);
 
-        lblName.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        lblName.setFont(new java.awt.Font("SansSerif", 0, 16)); // NOI18N
         lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Menu Name");
 
@@ -57,7 +63,7 @@ public class MenuItem extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(lblIcon)
                 .addGap(18, 18, 18)
                 .addComponent(lblName)
@@ -66,17 +72,21 @@ public class MenuItem extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblIcon, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(lblName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     @Override
     protected void paintComponent(Graphics grphcs) {
-        if (selected) {
+        if (selected || over) {
             Graphics2D g2 = (Graphics2D) grphcs;
             g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            g2.setColor(new Color(255, 255, 255, 80));
-            g2.fillRoundRect(0, 0, getWidth(), getHeight(), 5, 5);
+          if(selected){
+              g2.setColor(new Color(255, 255, 255, 80));
+          } else {
+              g2.setColor(new Color(255, 255, 255, 20));
+          }
+            g2.fillRoundRect(10, 0, getWidth()-20, getHeight(), 5, 5);
         }
         super.paintComponent(grphcs);
 
