@@ -1,6 +1,6 @@
-
 package otherForms;
 
+import event.EventMenuSelected;
 import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
@@ -11,10 +11,16 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import javax.swing.JFrame;
 import settings.Model_Menu;
-
+import Main.*;
 
 public class Menu extends javax.swing.JPanel {
-    
+
+    public EventMenuSelected event;
+
+    public void addEventMenuSelected(EventMenuSelected event) {
+        this.event = event;
+        listMenu1.addEventMenuSelected(event);
+    }
 
     public Menu() {
         initComponents();
@@ -22,22 +28,35 @@ public class Menu extends javax.swing.JPanel {
         listMenu1.setOpaque(false);
         init();
     }
-    
-    private void init(){
-        listMenu1.addItem(new Model_Menu("1", "Dashboard", Model_Menu.MenuType.MENU));
-        listMenu1.addItem(new Model_Menu("2", "Categories", Model_Menu.MenuType.MENU));
-        listMenu1.addItem(new Model_Menu("3", "Products", Model_Menu.MenuType.MENU));
-        listMenu1.addItem(new Model_Menu("4", "Order", Model_Menu.MenuType.MENU));
-        listMenu1.addItem(new Model_Menu("5", "View Order", Model_Menu.MenuType.MENU));
-        listMenu1.addItem(new Model_Menu("6", "Customers", Model_Menu.MenuType.MENU));
-        listMenu1.addItem(new Model_Menu("7", "Users", Model_Menu.MenuType.MENU));
-        listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
-        listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
-        listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
-        listMenu1.addItem(new Model_Menu("8", "Log Out", Model_Menu.MenuType.MENU));
+
+    private void init() {
+        if (logIn.selectedRole.equalsIgnoreCase("Administrator")) {
+            listMenu1.addItem(new Model_Menu("1", "Dashboard", Model_Menu.MenuType.MENU));
+            listMenu1.addItem(new Model_Menu("2", "Categories", Model_Menu.MenuType.MENU));
+            listMenu1.addItem(new Model_Menu("3", "Products", Model_Menu.MenuType.MENU));
+            listMenu1.addItem(new Model_Menu("4", "Order", Model_Menu.MenuType.MENU));
+            listMenu1.addItem(new Model_Menu("5", "View Order", Model_Menu.MenuType.MENU));
+            listMenu1.addItem(new Model_Menu("6", "Customers", Model_Menu.MenuType.MENU));
+            listMenu1.addItem(new Model_Menu("7", "Users", Model_Menu.MenuType.MENU));
+            listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
+            listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
+            listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
+            listMenu1.addItem(new Model_Menu("8", "Log Out", Model_Menu.MenuType.MENU));
+        } else if (logIn.selectedRole.equalsIgnoreCase("Employee")){
+            listMenu1.addItem(new Model_Menu("1", "Dashboard", Model_Menu.MenuType.MENU));
+            listMenu1.addItem(new Model_Menu("2", "Categories", Model_Menu.MenuType.MENU));
+            listMenu1.addItem(new Model_Menu("3", "Products", Model_Menu.MenuType.MENU));
+            listMenu1.addItem(new Model_Menu("4", "Order", Model_Menu.MenuType.MENU));
+            listMenu1.addItem(new Model_Menu("5", "View Order", Model_Menu.MenuType.MENU));
+            listMenu1.addItem(new Model_Menu("6", "Customers", Model_Menu.MenuType.MENU));
+            listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
+            listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
+            listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
+            listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
+            listMenu1.addItem(new Model_Menu("8", "Log Out", Model_Menu.MenuType.MENU));
+        }
+
     }
-    
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -100,35 +119,33 @@ public class Menu extends javax.swing.JPanel {
 
     // Designs the Menu bar
     @Override
-    protected void paintChildren(Graphics grphcs){
+    protected void paintChildren(Graphics grphcs) {
         Graphics2D g2 = (Graphics2D) grphcs;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        GradientPaint g = new GradientPaint(0,0, Color.decode("#187CD9"), 0, getHeight(), Color.decode("#284866"));
+        GradientPaint g = new GradientPaint(0, 0, Color.decode("#187CD9"), 0, getHeight(), Color.decode("#284866"));
         g2.setPaint(g);
         g2.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
-        g2.fillRect(getWidth()-20, 0, getWidth(), getHeight());
+        g2.fillRect(getWidth() - 20, 0, getWidth(), getHeight());
         super.paintChildren(grphcs);
     }
-    
+
     private int x, y;
-    
-    public void initMoving(JFrame f){
+
+    public void initMoving(JFrame f) {
         PanelMoving.addMouseListener(new MouseAdapter() {
             @Override
-            public void mousePressed(MouseEvent me){
+            public void mousePressed(MouseEvent me) {
                 x = me.getX();
                 y = me.getY();
             }
         });
         PanelMoving.addMouseMotionListener(new MouseMotionAdapter() {
             @Override
-            public void mouseDragged(MouseEvent me){
-                f.setLocation(me.getXOnScreen()- x, me.getYOnScreen() - y);
+            public void mouseDragged(MouseEvent me) {
+                f.setLocation(me.getXOnScreen() - x, me.getYOnScreen() - y);
             }
         });
-        
-        
-    
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -12,7 +12,7 @@ public class InventorySystem {
                 progressScreen loading = new progressScreen(null, true);
                 loading.setVisible(true);
 
-                new logIn().setVisible(true);
+                new logIn().show();
 
             }
         });

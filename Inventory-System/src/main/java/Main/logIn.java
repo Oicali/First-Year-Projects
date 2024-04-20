@@ -17,6 +17,8 @@ public class logIn extends javax.swing.JFrame {
     ImageIcon image = new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\Inventory-System\\src\\main\\java\\resources\\logoSmall.png");
     public static boolean isUserEmpty = true;
     public static boolean isPassEmpty = true;
+    public static String username = "";
+    public static String selectedRole = "";
     
 
     public logIn() {
@@ -247,9 +249,9 @@ public class logIn extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void logInBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logInBtnActionPerformed
-        String username = usernameField.getText();
+        username = usernameField.getText();
         String password = passField.getText();
-        String selectedRole = (String) selectRole.getSelectedItem();
+        selectedRole = (String) selectRole.getSelectedItem();
 
         Connection con = InventorySystem.getDbCon();
 
@@ -264,8 +266,8 @@ public class logIn extends javax.swing.JFrame {
                 String storedPassword = rs.getString("password"); // Get the stored password from the database
 
                 if (password.equals(storedPassword)) {
-                    setVisible(false);
-                    new Main(selectedRole).setVisible(true);
+                    dispose();
+                    new Main(selectedRole).show();
                 } else {
                     logInErrorMessage.setText("Invalid Password!");
                 }
