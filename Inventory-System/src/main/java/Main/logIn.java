@@ -265,7 +265,7 @@ public class logIn extends javax.swing.JFrame {
 
                 if (password.equals(storedPassword)) {
                     setVisible(false);
-                    new Home(selectedRole).setVisible(true);
+                    new Main(selectedRole).setVisible(true);
                 } else {
                     logInErrorMessage.setText("Invalid Password!");
                 }
