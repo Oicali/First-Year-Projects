@@ -41,6 +41,7 @@ public class Menu extends javax.swing.JPanel {
             listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
             listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
             listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
+            listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
             listMenu1.addItem(new Model_Menu("8", "Log Out", Model_Menu.MenuType.MENU));
         } else if (logIn.selectedRole.equalsIgnoreCase("Employee")){
             listMenu1.addItem(new Model_Menu("1", "Dashboard", Model_Menu.MenuType.MENU));
@@ -49,6 +50,7 @@ public class Menu extends javax.swing.JPanel {
             listMenu1.addItem(new Model_Menu("4", "Order", Model_Menu.MenuType.MENU));
             listMenu1.addItem(new Model_Menu("5", "View Order", Model_Menu.MenuType.MENU));
             listMenu1.addItem(new Model_Menu("6", "Customers", Model_Menu.MenuType.MENU));
+            listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
             listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
             listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
             listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
@@ -98,9 +100,8 @@ public class Menu extends javax.swing.JPanel {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addGap(41, 41, 41)
-                .addComponent(listMenu1, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(listMenu1, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

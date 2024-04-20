@@ -26,6 +26,45 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         setBackground(new Color(0,0,0,0));
+        setForm(form0); // added to be in form 0 by default
+        menu.initMoving(Main.this);
+        menu.addEventMenuSelected(new EventMenuSelected(){
+            @Override
+            public void selected(int index){
+                System.out.println(index);
+                if(index==0){
+                    setForm(new Form0());
+                } else if (index == 1){
+                    setForm(new Form1());
+                } else if (index == 2){
+                    setForm(new Form2());
+                } else if (index == 3){
+                    setForm(new Form3());
+                } else if (index == 4){
+                
+                } else if (index == 5){
+                
+                } else if (index == 6){
+                
+                } else if (index == 11){
+                    dispose();
+                    new logIn().show();
+                }
+                
+            }
+        });
+    }
+    
+    private void setForm(JComponent com){
+        mainPanel.removeAll();
+        mainPanel.add(com);
+        mainPanel.repaint();
+        mainPanel.revalidate();
+    }
+    
+    public Main(String Role) {
+        initComponents();
+        setBackground(new Color(0,0,0,0));
         form0=new Form0();
         form1=new Form1();
         form2=new Form2();
@@ -50,50 +89,7 @@ public class Main extends javax.swing.JFrame {
                 
                 } else if (index == 6){
                 
-                } else if (index == 10){
-                    dispose();
-                    new logIn().show();
-                }
-                
-            }
-        });
-    }
-    
-    private void setForm(JComponent com){
-        mainPanel.removeAll();
-        mainPanel.add(com);
-        mainPanel.repaint();
-        mainPanel.revalidate();
-    }
-    
-    public Main(String Role) {
-        initComponents();
-        setBackground(new Color(0,0,0,0));
-        form0=new Form0();
-        form1=new Form1();
-        form2=new Form2();
-        form3=new Form3();
-        setForm(form0);
-        menu.initMoving(Main.this);
-        menu.addEventMenuSelected(new EventMenuSelected(){
-            @Override
-            public void selected(int index){
-                System.out.println(index);
-                if(index==0){
-                    setForm(form0);
-                } else if (index == 1){
-                    setForm(form1);
-                } else if (index == 2){
-                    setForm(form2);
-                } else if (index == 3){
-                    setForm(form3);
-                } else if (index == 4){
-                
-                } else if (index == 5){
-                
-                } else if (index == 6){
-                
-                } else if (index == 10){
+                } else if (index == 11){
                     dispose();
                     new logIn().show();
                 }
@@ -120,8 +116,9 @@ public class Main extends javax.swing.JFrame {
         mainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1100, 700));
+        setMinimumSize(new java.awt.Dimension(1250, 750));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1250, 750));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
