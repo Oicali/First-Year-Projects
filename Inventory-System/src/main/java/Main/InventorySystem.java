@@ -1,9 +1,12 @@
 package Main;
 
 import java.sql.*;
+import javax.swing.ImageIcon;
 import otherForms.*;
 
 public class InventorySystem {
+    
+    public static ImageIcon image = new ImageIcon("C:\\Users\\jairus\\Documents\\GitHub\\First-Year-Projects\\Inventory-System\\src\\main\\java\\resources\\logoSmall.png");
 
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {

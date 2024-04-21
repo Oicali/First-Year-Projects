@@ -18,8 +18,8 @@ import otherForms.*;
 public class ListMenu <E extends Object> extends JList<E> {
     
     private final DefaultListModel model;
-    private int selectedIndex = 0; // edited from -1
-    private int overIndex = 0; // edited from -1
+    private int selectedIndex = -1; // edited from -1
+    private int overIndex = -1; // edited from -1
     public EventMenuSelected event;
     
     public void addEventMenuSelected(EventMenuSelected event){

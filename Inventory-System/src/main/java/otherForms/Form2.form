@@ -36,7 +36,7 @@
           <Font name="SansSerif" size="36" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Form 2"/>
+        <Property name="text" type="java.lang.String" value="Products"/>
       </Properties>
     </Component>
   </SubComponents>

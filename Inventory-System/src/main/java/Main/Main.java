@@ -22,78 +22,103 @@ public class Main extends javax.swing.JFrame {
     private Form1 form1;
     private Form2 form2;
     private Form3 form3;
-    
+
     public Main() {
         initComponents();
-        setBackground(new Color(0,0,0,0));
+        setIconImage(InventorySystem.image.getImage());
+        setBackground(new Color(0, 0, 0, 0));
         setForm(form0); // added to be in form 0 by default
         menu.initMoving(Main.this);
-        menu.addEventMenuSelected(new EventMenuSelected(){
+        menu.addEventMenuSelected(new EventMenuSelected() {
             @Override
-            public void selected(int index){
-                System.out.println(index);
-                if(index==0){
+            public void selected(int index) {
+                //System.out.println(index);
+                if (index == 0) {
                     setForm(new Form0());
-                } else if (index == 1){
+                } else if (index == 1) {
                     setForm(new Form1());
-                } else if (index == 2){
+                } else if (index == 2) {
                     setForm(new Form2());
-                } else if (index == 3){
+                } else if (index == 3) {
                     setForm(new Form3());
-                } else if (index == 4){
-                
-                } else if (index == 5){
-                
-                } else if (index == 6){
-                
-                } else if (index == 11){
+                } else if (index == 4) {
+
+                } else if (index == 5) {
+
+                } else if (index == 6) {
+
+                } else if (index == 11) {
                     dispose();
                     new logIn().show();
                 }
-                
+
             }
         });
     }
-    
-    private void setForm(JComponent com){
+
+    private void setForm(JComponent com) {
         mainPanel.removeAll();
         mainPanel.add(com);
         mainPanel.repaint();
         mainPanel.revalidate();
     }
-    
+
     public Main(String Role) {
         initComponents();
-        setBackground(new Color(0,0,0,0));
-        form0=new Form0();
-        form1=new Form1();
-        form2=new Form2();
-        form3=new Form3();
+        setBackground(new Color(0, 0, 0, 0));
+        setIconImage(InventorySystem.image.getImage());
+        form0 = new Form0();
+        form1 = new Form1();
+        form2 = new Form2();
+        form3 = new Form3();
         setForm(form0); // added to be in form 0 by default
         menu.initMoving(Main.this);
-        menu.addEventMenuSelected(new EventMenuSelected(){
+        menu.addEventMenuSelected(new EventMenuSelected() {
             @Override
-            public void selected(int index){
-                System.out.println(index);
-                if(index==0){
-                    setForm(form0);
-                } else if (index == 1){
-                    setForm(form1);
-                } else if (index == 2){
-                    setForm(form2);
-                } else if (index == 3){
-                    setForm(form3);
-                } else if (index == 4){
+            public void selected(int index) {
+                //System.out.println(index);
+                if (logIn.selectedRole.equalsIgnoreCase("Administrator")) {
+                    if (index == 0) {
+                        setForm(form0);
+                    } else if (index == 1) {
+                        setForm(form1);
+                    } else if (index == 2) {
+                        setForm(form2);
+                    } else if (index == 3) {
+                        setForm(form3);
+                    } else if (index == 4) {
+
+                    } else if (index == 5) {
+
+                    } else if (index == 6) {
+
+                    } else if (index == 11) {
+                        dispose();
+                        new logIn().show();
+                    }
+
+                } else if (logIn.selectedRole.equalsIgnoreCase("Employee")){
+                    if (index == 0) {
+                        setForm(form0);
+                    } else if (index == 1) {
+                        setForm(form2);
+                    } else if (index == 2) {
+                        setForm(form3);
+                    } else if (index == 3) {
+                        
+                    } else if (index == 4) {
+
+                    } else if (index == 5) {
+
+                    } else if (index == 6) {
+
+                    } else if (index == 11) {
+                        dispose();
+                        new logIn().show();
+                    }
                 
-                } else if (index == 5){
-                
-                } else if (index == 6){
-                
-                } else if (index == 11){
-                    dispose();
-                    new logIn().show();
                 }
-                
+
             }
         });
     }
@@ -108,12 +133,12 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         panelBorder1 = new otherForms.PanelBorder();
-        menu = new otherForms.Menu();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         mainPanel = new javax.swing.JPanel();
+        menu = new otherForms.Menu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1250, 750));
@@ -175,22 +200,26 @@ public class Main extends javax.swing.JFrame {
         panelBorder1Layout.setHorizontalGroup(
             panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBorder1Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
                 .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addGroup(panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panelBorder1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
+                        .addGap(12, 12, 12)
                         .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
         );
         panelBorder1Layout.setVerticalGroup(
             panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
             .addGroup(panelBorder1Layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelBorder1Layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
