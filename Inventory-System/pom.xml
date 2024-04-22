@@ -5,6 +5,8 @@
     <artifactId>Inventory-System</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+    
+    
     <dependencies>
         
         <!-- Dependecy for UI effect(maybe)-->
@@ -22,7 +24,13 @@
             <version>8.0.32</version> <!-- Replace with the desired version -->
         </dependency>
         
-        
+        <!-- Dependecy for glasspanepopup-->
+        <dependency>
+            <groupId>com.miglayout</groupId>
+            <artifactId>miglayout</artifactId>
+            <version>3.7.4</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -6,6 +6,8 @@ package Main;
 
 import java.awt.Color;
 import java.awt.Shape;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
 import java.sql.*;
 import javax.swing.ImageIcon;
@@ -13,6 +15,8 @@ import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.plaf.metal.MetalButtonUI;
+import otherForms.message;
+import settings.GlassPanePopup;
 
 public class logIn extends javax.swing.JFrame {
 
@@ -26,6 +30,7 @@ public class logIn extends javax.swing.JFrame {
     public logIn() {
         initComponents();
         setIconImage(image.getImage());
+        GlassPanePopup.install(this);
         passField.setEchoChar('•');
         
         logInBtn.setUI(new MetalButtonUI() {
@@ -107,11 +112,11 @@ public class logIn extends javax.swing.JFrame {
         forgotPass = new javax.swing.JButton();
         License = new javax.swing.JButton();
         logInErrorMessage = new javax.swing.JLabel();
-        passField = new settings.PasswordField();
-        usernameField = new settings.TextField();
-        selectRole = new settings.Combobox();
-        logInBtn = new settings.RoundedButtons();
-        showPass = new settings.JCheckBoxCustom();
+        passField = new components.PasswordField();
+        usernameField = new components.TextField();
+        selectRole = new components.Combobox();
+        logInBtn = new components.RoundedButtons();
+        showPass = new components.JCheckBoxCustom();
         closeBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -133,6 +138,11 @@ public class logIn extends javax.swing.JFrame {
         forgotUser.setBorderPainted(false);
         forgotUser.setContentAreaFilled(false);
         forgotUser.setFocusPainted(false);
+        forgotUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                forgotUserActionPerformed(evt);
+            }
+        });
 
         forgotPass.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         forgotPass.setForeground(new java.awt.Color(153, 153, 153));
@@ -215,7 +225,6 @@ public class logIn extends javax.swing.JFrame {
         closeBtn.setBorderPainted(false);
         closeBtn.setContentAreaFilled(false);
         closeBtn.setFocusPainted(false);
-        closeBtn.setOpaque(false);
         closeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 closeBtnActionPerformed(evt);
@@ -400,6 +409,18 @@ public class logIn extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_closeBtnActionPerformed
 
+    private void forgotUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotUserActionPerformed
+        message obj = new message();
+        obj.eventOK(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                System.out.println("Click OK");
+                GlassPanePopup.closePopupLast();
+            }
+        });
+        GlassPanePopup.showPopup(obj);
+    }//GEN-LAST:event_forgotUserActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -419,12 +440,12 @@ public class logIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private settings.RoundedButtons logInBtn;
+    private components.RoundedButtons logInBtn;
     private javax.swing.JLabel logInErrorMessage;
-    private settings.PasswordField passField;
-    private settings.Combobox selectRole;
-    private settings.JCheckBoxCustom showPass;
+    private components.PasswordField passField;
+    private components.Combobox selectRole;
+    private components.JCheckBoxCustom showPass;
     private javax.swing.JLabel userIcon;
-    private settings.TextField usernameField;
+    private components.TextField usernameField;
     // End of variables declaration//GEN-END:variables
 }

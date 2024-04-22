@@ -155,6 +155,9 @@
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="forgotUserActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="forgotPass">
           <Properties>
@@ -197,7 +200,7 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
         </Component>
-        <Component class="settings.PasswordField" name="passField">
+        <Component class="components.PasswordField" name="passField">
           <Properties>
             <Property name="selectionColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -207,7 +210,7 @@
             <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="passFieldMousePressed"/>
           </Events>
         </Component>
-        <Component class="settings.TextField" name="usernameField">
+        <Component class="components.TextField" name="usernameField">
           <Properties>
             <Property name="selectionColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -217,7 +220,7 @@
             <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="usernameFieldMousePressed"/>
           </Events>
         </Component>
-        <Component class="settings.Combobox" name="selectRole">
+        <Component class="components.Combobox" name="selectRole">
           <Properties>
             <Property name="maximumRowCount" type="int" value="3"/>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
@@ -238,7 +241,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectRoleActionPerformed"/>
           </Events>
         </Component>
-        <Component class="settings.RoundedButtons" name="logInBtn">
+        <Component class="components.RoundedButtons" name="logInBtn">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="bf" green="6a" red="f" type="rgb"/>
@@ -264,7 +267,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logInBtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="settings.JCheckBoxCustom" name="showPass">
+        <Component class="components.JCheckBoxCustom" name="showPass">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="99" type="rgb"/>
@@ -291,7 +294,6 @@
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="focusPainted" type="boolean" value="false"/>
-            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="closeBtnActionPerformed"/>

@@ -29,12 +29,12 @@ public class progressScreen extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        curvesPanel1 = new settings.CurvesPanel();
+        curvesPanel1 = new components.CurvesPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        bar = new settings.ProgressBarCustom();
         lblStatus = new javax.swing.JLabel();
+        bar = new components.ProgressBarCustom();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(550, 350));
@@ -69,20 +69,19 @@ public class progressScreen extends javax.swing.JDialog {
         curvesPanel1.add(jLabel3);
         jLabel3.setBounds(188, 200, 170, 22);
 
-        bar.setBackground(new java.awt.Color(15, 106, 191));
-        bar.setForeground(new java.awt.Color(255, 255, 255));
-        bar.setMaximumSize(new java.awt.Dimension(10, 5));
-        bar.setMinimumSize(new java.awt.Dimension(10, 5));
-        curvesPanel1.add(bar);
-        bar.setBounds(100, 250, 350, 5);
-
         lblStatus.setBackground(new java.awt.Color(255, 255, 255));
         lblStatus.setFont(new java.awt.Font("SansSerif", 2, 12)); // NOI18N
         lblStatus.setForeground(new java.awt.Color(255, 255, 255));
         lblStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblStatus.setText("Status ...");
         curvesPanel1.add(lblStatus);
-        lblStatus.setBounds(110, 260, 330, 15);
+        lblStatus.setBounds(120, 260, 320, 15);
+
+        bar.setBackground(new java.awt.Color(204, 204, 204));
+        bar.setForeground(new java.awt.Color(255, 255, 255));
+        bar.setOpaque(false);
+        curvesPanel1.add(bar);
+        bar.setBounds(120, 245, 310, 5);
 
         getContentPane().add(curvesPanel1);
         curvesPanel1.setBounds(0, 0, 550, 350);
@@ -213,8 +212,8 @@ public class progressScreen extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private settings.ProgressBarCustom bar;
-    private settings.CurvesPanel curvesPanel1;
+    private components.ProgressBarCustom bar;
+    private components.CurvesPanel curvesPanel1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
