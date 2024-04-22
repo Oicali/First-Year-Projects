@@ -5,6 +5,7 @@
 package settings;
 
 
+import interfaces.Option;
 import java.awt.Color;
 import java.awt.Component;
 
@@ -50,7 +51,7 @@ public class DefaultOption implements Option {
 
     @Override
     public float opacity() {
-        return 0.7f;
+        return 0.5f;
     }
 
     @Override

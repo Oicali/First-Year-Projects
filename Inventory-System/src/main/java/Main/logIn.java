@@ -6,8 +6,6 @@ package Main;
 
 import java.awt.Color;
 import java.awt.Shape;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
 import java.sql.*;
 import javax.swing.ImageIcon;
@@ -332,17 +330,17 @@ public class logIn extends javax.swing.JFrame {
         username = usernameField.getText();
         String password = passField.getText();
         selectedRole = (String) selectRole.getSelectedItem();
+        
+        //Connection con = InventorySystem.getDbCon();
 
-        Connection con = InventorySystem.getDbCon();
-
-        int accountCheck = 0;
+        boolean accountNotFound = true;
         try {
 
-            Statement s = con.createStatement();
+            Statement s = InventorySystem.getDbCon().createStatement();
             ResultSet rs = s.executeQuery("SELECT * FROM users WHERE userName = '" + username + "' AND userRole = '" + selectedRole + "' AND status = 'Active'");
 
             while (rs.next()) {
-                accountCheck = 1;
+                accountNotFound = false;
                 String storedPassword = rs.getString("password"); // Get the stored password from the database
 
                 if (password.equals(storedPassword)) {
@@ -357,21 +355,22 @@ public class logIn extends javax.swing.JFrame {
             rs.close();
             s.close();
 
-            if (accountCheck == 0) {
+            if (accountNotFound) {
                 logInErrorMessage.setText("Account not found!");
             }
         } catch (SQLException e) {
             e.printStackTrace(); // Print the exception details for debugging
             JOptionPane.showMessageDialog(null, "An error occurred. Please try again later.", "Error", JOptionPane.ERROR_MESSAGE);
         } finally {
-            try {
+            InventorySystem.closeCon();
+            /*try {
                 // Close the Connection
-                if (con != null) {
-                    con.close();
+                if (InventorySystem.getDbCon()!= null) {
+                    InventorySystem.getDbCon().close();
                 }
             } catch (SQLException ex) {
                 ex.printStackTrace();
-            }
+            }*/
         }
 
 
@@ -411,13 +410,7 @@ public class logIn extends javax.swing.JFrame {
 
     private void forgotUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotUserActionPerformed
         message obj = new message();
-        obj.eventOK(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                System.out.println("Click OK");
-                GlassPanePopup.closePopupLast();
-            }
-        });
+        
         GlassPanePopup.showPopup(obj);
     }//GEN-LAST:event_forgotUserActionPerformed
 

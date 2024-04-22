@@ -4,12 +4,18 @@
  */
 package otherForms;
 
+import Main.InventorySystem;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 import settings.GlassPanePopup;
 
 /**
@@ -18,17 +24,15 @@ import settings.GlassPanePopup;
  */
 public class message extends javax.swing.JPanel {
 
-    /**
-     * Creates new form message
-     */
+    public static String findUsername;
+
     public message() {
         initComponents();
         setOpaque(false);
         txt.setBackground(new Color(0, 0, 0, 0));
-        txt.setSelectionColor(new Color(48, 170, 63, 200));
         txt.setOpaque(false);
     }
-    
+
     @Override
     protected void paintComponent(Graphics grphcs) {
         Graphics2D g2 = (Graphics2D) grphcs.create();
@@ -49,19 +53,68 @@ public class message extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        txt = new javax.swing.JTextPane();
-        cmdOK = new javax.swing.JButton();
+        sendUsernameBtn = new components.RoundedButtons();
+        txt = new javax.swing.JLabel();
+        field = new javax.swing.JTextField();
+        cmdCancel = new components.RoundedButtons();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setText("Error");
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(15, 106, 191));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Forgot your username?");
 
-        txt.setText("a;lsdf;asldf;aslkdfj;alskdf;alsdf");
-
-        cmdOK.setText("jButton1");
-        cmdOK.addActionListener(new java.awt.event.ActionListener() {
+        sendUsernameBtn.setBackground(new java.awt.Color(30, 136, 56));
+        sendUsernameBtn.setForeground(new java.awt.Color(255, 255, 255));
+        sendUsernameBtn.setText("Send");
+        sendUsernameBtn.setBorderPainted(false);
+        sendUsernameBtn.setColor(new java.awt.Color(30, 136, 56));
+        sendUsernameBtn.setColorClick(new java.awt.Color(30, 136, 56));
+        sendUsernameBtn.setColorOver(new java.awt.Color(30, 136, 56));
+        sendUsernameBtn.setFocusPainted(false);
+        sendUsernameBtn.setFont(new java.awt.Font("SansSerif", 0, 16)); // NOI18N
+        sendUsernameBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdOKActionPerformed(evt);
+                sendUsernameBtnActionPerformed(evt);
+            }
+        });
+
+        txt.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        txt.setForeground(new java.awt.Color(102, 102, 102));
+        txt.setText("Enter your registered email address to receive your username.");
+
+        field.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        field.setForeground(new java.awt.Color(153, 153, 153));
+        field.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        field.setText("Enter Email Address");
+        field.setOpaque(false);
+        field.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                fieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                fieldFocusLost(evt);
+            }
+        });
+        field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldActionPerformed(evt);
+            }
+        });
+
+        cmdCancel.setBackground(new java.awt.Color(204, 204, 204));
+        cmdCancel.setText("Cancel");
+        cmdCancel.setBorderColor(new java.awt.Color(204, 204, 204));
+        cmdCancel.setBorderPainted(false);
+        cmdCancel.setColor(new java.awt.Color(204, 204, 204));
+        cmdCancel.setColorClick(new java.awt.Color(204, 204, 204));
+        cmdCancel.setColorOver(new java.awt.Color(204, 204, 204));
+        cmdCancel.setFocusPainted(false);
+        cmdCancel.setFont(new java.awt.Font("SansSerif", 0, 16)); // NOI18N
+        cmdCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCancelActionPerformed(evt);
             }
         });
 
@@ -70,46 +123,99 @@ public class message extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(244, Short.MAX_VALUE)
-                .addComponent(cmdOK)
-                .addGap(55, 55, 55))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(txt, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cmdCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(sendUsernameBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(field)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addComponent(jLabel1)))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(40, 40, 40)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
-                .addComponent(cmdOK)
-                .addGap(25, 25, 25))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(txt, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(31, 31, 31)
+                .addComponent(txt)
+                .addGap(18, 18, 18)
+                .addComponent(field, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmdCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sendUsernameBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmdOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdOKActionPerformed
-        GlassPanePopup.closePopupLast();
-    }//GEN-LAST:event_cmdOKActionPerformed
+    private void sendUsernameBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendUsernameBtnActionPerformed
+        if (!field.getText().isEmpty() || field.getText().equals("Enter Email Address")) {
+            findUsername = field.getText();
 
-    public void eventOK(ActionListener event) {
-        cmdOK.addActionListener(event);
-    }
+            boolean emailNotFound = true;
+            try {
+                Statement s = InventorySystem.getDbCon().createStatement();
+                ResultSet rs = s.executeQuery("SELECT * FROM users WHERE email = '" + findUsername + "'");
+                System.out.println(findUsername);
+
+                while (rs.next()) {
+                    emailNotFound = false;
+                    String storedEmail = rs.getString("email"); // Get the stored email from the database
+                    System.out.println("Hil");
+                }
+
+                // Close the ResultSet
+                rs.close();
+                s.close();
+                
+                if (emailNotFound) {
+                    JOptionPane.showMessageDialog(this, "Sorry, it looks like the email you \nentered is not registered.", "Email Not Found", JOptionPane.ERROR_MESSAGE);
+            }
+
+            } catch (SQLException e) {
+                e.printStackTrace(); // Print the exception details for debugging
+                JOptionPane.showMessageDialog(null, "An error occurred. Please try again later.", "Error", JOptionPane.ERROR_MESSAGE);
+            } finally {
+                InventorySystem.closeCon();
+            }
+        }
+    }//GEN-LAST:event_sendUsernameBtnActionPerformed
+
+    private void fieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fieldFocusGained
+        field.setText(null);
+        field.setForeground(new Color(51, 51, 51));
+    }//GEN-LAST:event_fieldFocusGained
+
+    private void fieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fieldFocusLost
+        if (field.getText().isEmpty()) {
+            field.setText("Enter Email Address");
+            field.setForeground(new Color(153, 153, 153));
+        }
+
+
+    }//GEN-LAST:event_fieldFocusLost
+
+    private void cmdCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelActionPerformed
+        GlassPanePopup.closePopupLast();
+    }//GEN-LAST:event_cmdCancelActionPerformed
+
+    private void fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton cmdOK;
+    private components.RoundedButtons cmdCancel;
+    private javax.swing.JTextField field;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextPane txt;
+    private components.RoundedButtons sendUsernameBtn;
+    private javax.swing.JLabel txt;
     // End of variables declaration//GEN-END:variables
 }

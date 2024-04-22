@@ -4,6 +4,7 @@
  */
 package settings;
 
+import interfaces.Option;
 import java.awt.AlphaComposite;
 import java.awt.Component;
 import java.awt.Graphics;

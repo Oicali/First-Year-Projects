@@ -31,4 +31,15 @@ public class InventorySystem {
 
     }
 
+    public static void closeCon() {
+        try {
+            if (getDbCon() != null) {
+                getDbCon().close();
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+
 }

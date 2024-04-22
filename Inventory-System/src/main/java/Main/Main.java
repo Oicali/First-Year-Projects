@@ -4,7 +4,7 @@
  */
 package Main;
 
-import event.EventMenuSelected;
+import interfaces.EventMenuSelected;
 import java.awt.Color;
 import javax.swing.JComponent;
 import otherForms.*;

@@ -3,7 +3,7 @@ package settings;
 
 // List of te Menu Items
 
-import event.EventMenuSelected;
+import interfaces.EventMenuSelected;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
