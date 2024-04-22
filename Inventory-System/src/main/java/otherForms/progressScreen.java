@@ -36,7 +36,7 @@ public class progressScreen extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        bar = new splashscreen.ProgressBarCustom();
+        bar = new settings.ProgressBarCustom();
         lblStatus = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -216,7 +216,7 @@ public class progressScreen extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private splashscreen.ProgressBarCustom bar;
+    private settings.ProgressBarCustom bar;
     private settings.CurvesPanel curvesPanel1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

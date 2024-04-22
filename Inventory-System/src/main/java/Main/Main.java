@@ -31,24 +31,47 @@ public class Main extends javax.swing.JFrame {
         menu.addEventMenuSelected(new EventMenuSelected(){
             @Override
             public void selected(int index){
-                System.out.println(index);
-                if(index==0){
-                    setForm(new Form0());
-                } else if (index == 1){
-                    setForm(new Form1());
-                } else if (index == 2){
-                    setForm(new Form2());
-                } else if (index == 3){
-                    setForm(new Form3());
-                } else if (index == 4){
+                //System.out.println(index);
+                if (logIn.selectedRole.equalsIgnoreCase("Administrator")) {
+                    if (index == 0) {
+                        setForm(form0);
+                    } else if (index == 1) {
+                        setForm(form1);
+                    } else if (index == 2) {
+                        setForm(form2);
+                    } else if (index == 3) {
+                        setForm(form3);
+                    } else if (index == 4) {
+
+                    } else if (index == 5) {
+
+                    } else if (index == 6) {
+
+                    } else if (index == 11) {
+                        dispose();
+                        new logIn().show();
+                    }
+
+                } else if (logIn.selectedRole.equalsIgnoreCase("Employee")){
+                    if (index == 0) {
+                        setForm(form0);
+                    } else if (index == 1) {
+                        setForm(form2);
+                    } else if (index == 2) {
+                        setForm(form3);
+                    } else if (index == 3) {
+                        
+                    } else if (index == 4) {
+
+                    } else if (index == 5) {
+
+                    } else if (index == 6) {
+
+                    } else if (index == 11) {
+                        dispose();
+                        new logIn().show();
+                    }
                 
-                } else if (index == 5){
-                
-                } else if (index == 6){
-                
-                } else if (index == 11){
-                    dispose();
-                    new logIn().show();
                 }
                 
             }
@@ -74,24 +97,47 @@ public class Main extends javax.swing.JFrame {
         menu.addEventMenuSelected(new EventMenuSelected(){
             @Override
             public void selected(int index){
-                System.out.println(index);
-                if(index==0){
-                    setForm(form0);
-                } else if (index == 1){
-                    setForm(form1);
-                } else if (index == 2){
-                    setForm(form2);
-                } else if (index == 3){
-                    setForm(form3);
-                } else if (index == 4){
+                //System.out.println(index);
+               if (logIn.selectedRole.equalsIgnoreCase("Administrator")) {
+                    if (index == 0) {
+                        setForm(form0);
+                    } else if (index == 1) {
+                        setForm(form1);
+                    } else if (index == 2) {
+                        setForm(form2);
+                    } else if (index == 3) {
+                        setForm(form3);
+                    } else if (index == 4) {
+
+                    } else if (index == 5) {
+
+                    } else if (index == 6) {
+
+                    } else if (index == 11) {
+                        dispose();
+                        new logIn().show();
+                    }
+
+                } else if (logIn.selectedRole.equalsIgnoreCase("Employee")){
+                    if (index == 0) {
+                        setForm(form0);
+                    } else if (index == 1) {
+                        setForm(form2);
+                    } else if (index == 2) {
+                        setForm(form3);
+                    } else if (index == 3) {
+                        
+                    } else if (index == 4) {
+
+                    } else if (index == 5) {
+
+                    } else if (index == 6) {
+
+                    } else if (index == 11) {
+                        dispose();
+                        new logIn().show();
+                    }
                 
-                } else if (index == 5){
-                
-                } else if (index == 6){
-                
-                } else if (index == 11){
-                    dispose();
-                    new logIn().show();
                 }
                 
             }
@@ -179,17 +225,17 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panelBorder1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
+                        .addGap(12, 12, 12)
                         .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
         );
         panelBorder1Layout.setVerticalGroup(
             panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
+            .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(panelBorder1Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 

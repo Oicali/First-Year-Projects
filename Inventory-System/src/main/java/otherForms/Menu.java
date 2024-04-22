@@ -45,11 +45,11 @@ public class Menu extends javax.swing.JPanel {
             listMenu1.addItem(new Model_Menu("8", "Log Out", Model_Menu.MenuType.MENU));
         } else if (logIn.selectedRole.equalsIgnoreCase("Employee")){
             listMenu1.addItem(new Model_Menu("1", "Dashboard", Model_Menu.MenuType.MENU));
-            listMenu1.addItem(new Model_Menu("2", "Categories", Model_Menu.MenuType.MENU));
             listMenu1.addItem(new Model_Menu("3", "Products", Model_Menu.MenuType.MENU));
             listMenu1.addItem(new Model_Menu("4", "Order", Model_Menu.MenuType.MENU));
             listMenu1.addItem(new Model_Menu("5", "View Order", Model_Menu.MenuType.MENU));
             listMenu1.addItem(new Model_Menu("6", "Customers", Model_Menu.MenuType.MENU));
+            listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
             listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
             listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
             listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));

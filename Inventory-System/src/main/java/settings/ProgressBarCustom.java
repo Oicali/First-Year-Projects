@@ -1,4 +1,4 @@
-package splashscreen;
+package settings;
 
 import java.awt.Color;
 import java.awt.Dimension;
