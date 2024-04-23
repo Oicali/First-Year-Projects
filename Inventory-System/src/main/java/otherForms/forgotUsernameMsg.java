@@ -9,9 +9,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
-import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -22,11 +20,11 @@ import settings.GlassPanePopup;
  *
  * @author jairus
  */
-public class message extends javax.swing.JPanel {
+public class forgotUsernameMsg extends javax.swing.JPanel {
 
     public static String findUsername;
 
-    public message() {
+    public forgotUsernameMsg() {
         initComponents();
         setOpaque(false);
         txt.setBackground(new Color(0, 0, 0, 0));
@@ -65,13 +63,14 @@ public class message extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Forgot your username?");
 
-        sendUsernameBtn.setBackground(new java.awt.Color(30, 136, 56));
+        sendUsernameBtn.setBackground(new java.awt.Color(70, 191, 50));
         sendUsernameBtn.setForeground(new java.awt.Color(255, 255, 255));
         sendUsernameBtn.setText("Send");
+        sendUsernameBtn.setBorderColor(new java.awt.Color(70, 191, 50));
         sendUsernameBtn.setBorderPainted(false);
-        sendUsernameBtn.setColor(new java.awt.Color(30, 136, 56));
-        sendUsernameBtn.setColorClick(new java.awt.Color(30, 136, 56));
-        sendUsernameBtn.setColorOver(new java.awt.Color(30, 136, 56));
+        sendUsernameBtn.setColor(new java.awt.Color(70, 191, 50));
+        sendUsernameBtn.setColorClick(new java.awt.Color(70, 191, 50));
+        sendUsernameBtn.setColorOver(new java.awt.Color(70, 191, 50));
         sendUsernameBtn.setFocusPainted(false);
         sendUsernameBtn.setFont(new java.awt.Font("SansSerif", 0, 16)); // NOI18N
         sendUsernameBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -103,13 +102,14 @@ public class message extends javax.swing.JPanel {
             }
         });
 
-        cmdCancel.setBackground(new java.awt.Color(204, 204, 204));
+        cmdCancel.setBackground(new java.awt.Color(191, 50, 20));
+        cmdCancel.setForeground(new java.awt.Color(255, 255, 255));
         cmdCancel.setText("Cancel");
-        cmdCancel.setBorderColor(new java.awt.Color(204, 204, 204));
+        cmdCancel.setBorderColor(new java.awt.Color(191, 50, 20));
         cmdCancel.setBorderPainted(false);
-        cmdCancel.setColor(new java.awt.Color(204, 204, 204));
-        cmdCancel.setColorClick(new java.awt.Color(204, 204, 204));
-        cmdCancel.setColorOver(new java.awt.Color(204, 204, 204));
+        cmdCancel.setColor(new java.awt.Color(191, 50, 20));
+        cmdCancel.setColorClick(new java.awt.Color(191, 50, 20));
+        cmdCancel.setColorOver(new java.awt.Color(191, 50, 20));
         cmdCancel.setFocusPainted(false);
         cmdCancel.setFont(new java.awt.Font("SansSerif", 0, 16)); // NOI18N
         cmdCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -156,29 +156,27 @@ public class message extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void sendUsernameBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendUsernameBtnActionPerformed
-        if (!field.getText().isEmpty() || field.getText().equals("Enter Email Address")) {
+        if (!field.getText().isEmpty() && !field.getText().trim().equalsIgnoreCase("Enter Email Address")) {
             findUsername = field.getText();
 
-            boolean emailNotFound = true;
+            boolean emailFound = false;
             try {
                 Statement s = InventorySystem.getDbCon().createStatement();
                 ResultSet rs = s.executeQuery("SELECT * FROM users WHERE email = '" + findUsername + "'");
-                System.out.println(findUsername);
 
                 while (rs.next()) {
-                    emailNotFound = false;
+                    emailFound = true;
                     String storedEmail = rs.getString("email"); // Get the stored email from the database
-                    System.out.println("Hil");
+                    System.out.println("Email found: " + storedEmail);
                 }
 
                 // Close the ResultSet
                 rs.close();
                 s.close();
-                
-                if (emailNotFound) {
-                    JOptionPane.showMessageDialog(this, "Sorry, it looks like the email you \nentered is not registered.", "Email Not Found", JOptionPane.ERROR_MESSAGE);
-            }
 
+                if (!emailFound) {
+                    JOptionPane.showMessageDialog(this, "Sorry, it looks like the email you \n     entered is not registered.", "Email Not Found!", JOptionPane.ERROR_MESSAGE);
+                }
             } catch (SQLException e) {
                 e.printStackTrace(); // Print the exception details for debugging
                 JOptionPane.showMessageDialog(null, "An error occurred. Please try again later.", "Error", JOptionPane.ERROR_MESSAGE);

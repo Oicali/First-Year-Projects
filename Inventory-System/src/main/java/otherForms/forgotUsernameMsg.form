@@ -79,21 +79,24 @@
     <Component class="components.RoundedButtons" name="sendUsernameBtn">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="38" green="88" red="1e" type="rgb"/>
+          <Color blue="32" green="bf" red="46" type="rgb"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Send"/>
+        <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="32" green="bf" red="46" type="rgb"/>
+        </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="color" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="38" green="88" red="1e" type="rgb"/>
+          <Color blue="32" green="bf" red="46" type="rgb"/>
         </Property>
         <Property name="colorClick" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="38" green="88" red="1e" type="rgb"/>
+          <Color blue="32" green="bf" red="46" type="rgb"/>
         </Property>
         <Property name="colorOver" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="38" green="88" red="1e" type="rgb"/>
+          <Color blue="32" green="bf" red="46" type="rgb"/>
         </Property>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -136,21 +139,24 @@
     <Component class="components.RoundedButtons" name="cmdCancel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="14" green="32" red="bf" type="rgb"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cancel"/>
         <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="14" green="32" red="bf" type="rgb"/>
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="color" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="14" green="32" red="bf" type="rgb"/>
         </Property>
         <Property name="colorClick" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="14" green="32" red="bf" type="rgb"/>
         </Property>
         <Property name="colorOver" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="14" green="32" red="bf" type="rgb"/>
         </Property>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">

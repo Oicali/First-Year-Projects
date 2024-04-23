@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.plaf.metal.MetalButtonUI;
-import otherForms.message;
+import otherForms.forgotUsernameMsg;
 import settings.GlassPanePopup;
 
 public class logIn extends javax.swing.JFrame {
@@ -409,7 +409,7 @@ public class logIn extends javax.swing.JFrame {
     }//GEN-LAST:event_closeBtnActionPerformed
 
     private void forgotUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotUserActionPerformed
-        message obj = new message();
+        forgotUsernameMsg obj = new forgotUsernameMsg();
         
         GlassPanePopup.showPopup(obj);
     }//GEN-LAST:event_forgotUserActionPerformed
