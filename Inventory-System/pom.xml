@@ -9,7 +9,7 @@
     
     <dependencies>
         
-        <!-- Dependecy for UI effect(maybe)-->
+        <!-- Dependecy for UI effect(probably)-->
         <dependency>
             <groupId>io.github.AnLaVN</groupId>
             <artifactId>AL-Library_EN</artifactId>
@@ -30,6 +30,13 @@
             <artifactId>miglayout</artifactId>
             <version>3.7.4</version>
             <type>jar</type>
+        </dependency>
+        
+        <!-- Dependency for Email sending (Not necessary for some reason) -->
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
         </dependency>
     </dependencies>
     <properties>
