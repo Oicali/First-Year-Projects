@@ -7,8 +7,6 @@ package Main;
 import java.awt.Color;
 import java.awt.Shape;
 import java.awt.geom.RoundRectangle2D;
-import java.net.URL;
-import java.net.URLConnection;
 import java.sql.*;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -16,7 +14,6 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.plaf.metal.MetalButtonUI;
 import msgPopup.forgotUsernameMsg;
-import msgPopup.noWiFiMsg;
 import settings.GlassPanePopup;
 
 public class logIn extends javax.swing.JFrame {
@@ -412,19 +409,8 @@ public class logIn extends javax.swing.JFrame {
     }//GEN-LAST:event_closeBtnActionPerformed
 
     private void forgotUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotUserActionPerformed
-         try {
-            URL url = new URL("http://www.google.com");
-            URLConnection connection = url.openConnection();
-            connection.connect();
-            forgotUsernameMsg obj1 = new forgotUsernameMsg();
-            GlassPanePopup.showPopup(obj1);
-        } catch (Exception e) {
-            noWiFiMsg obj1 = new noWiFiMsg();
-            GlassPanePopup.showPopup(obj1);
-        }
-        
-        
-        
+        forgotUsernameMsg obj0 = new forgotUsernameMsg();
+        GlassPanePopup.showPopup(obj0); 
     }//GEN-LAST:event_forgotUserActionPerformed
 
     public static void main(String args[]) {
