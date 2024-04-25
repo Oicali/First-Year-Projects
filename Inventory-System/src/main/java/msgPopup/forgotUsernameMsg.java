@@ -9,6 +9,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
 import java.net.URL;
 import java.net.URLConnection;
@@ -38,6 +40,7 @@ import javax.mail.internet.MimeMessage;
  */
 public class forgotUsernameMsg extends javax.swing.JPanel {
 
+
     public forgotUsernameMsg() {
         initComponents();
         setOpaque(false);
@@ -57,9 +60,9 @@ public class forgotUsernameMsg extends javax.swing.JPanel {
 
     // Code for email sending
     public static void emailUsername(String recipient) throws Exception {
-        GlassPanePopup.closePopupLast();
+
         System.out.print("sending...");
-        
+
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true");
@@ -75,7 +78,7 @@ public class forgotUsernameMsg extends javax.swing.JPanel {
                 return new PasswordAuthentication(myAccountEmail, password);
             }
         });
-        
+
         Message message = prepareUsernameMessage(session, myAccountEmail, recipient);
         Transport.send(message);
         System.out.println("sent!");
@@ -238,6 +241,8 @@ public class forgotUsernameMsg extends javax.swing.JPanel {
     private void sendUsernameBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendUsernameBtnActionPerformed
         if (!field.getText().isEmpty() && !field.getText().trim().equalsIgnoreCase("Enter Email Address")) {
             try {
+                String storedEmail ="";
+
                 URL url = new URL("http://www.google.com");
                 URLConnection connection = url.openConnection();
                 connection.connect();
@@ -251,26 +256,27 @@ public class forgotUsernameMsg extends javax.swing.JPanel {
 
                     while (rs.next()) {
                         emailFound = true;
-                        String storedEmail = rs.getString("email"); // Get the stored email from the database
+                        storedEmail = rs.getString("email"); // Get the stored email from the database
                         System.out.println("Email found: " + storedEmail);
+                    }
+
+                    if (emailFound) {
                         try {
+                            GlassPanePopup.closePopupLast();
                             forgotUsernameMsg.emailUsername(storedEmail);
+                            emailedUsernameMsg obj3 = new emailedUsernameMsg();
+                            GlassPanePopup.showPopup(obj3);
 
                         } catch (Exception ex) {
                             Logger.getLogger(forgotUsernameMsg.class.getName()).log(Level.SEVERE, null, ex);
                         }
-                    }
-
-                    // Close the ResultSet
-                    rs.close();
-                    s.close();
-
-                    if (emailFound) {
-                        emailedUsernameMsg obj3 = new emailedUsernameMsg();
-                        GlassPanePopup.showPopup(obj3);
                     } else {
                         JOptionPane.showMessageDialog(this, "Sorry, it looks like the email you \n     entered is not registered.", "Email Not Found!", JOptionPane.ERROR_MESSAGE);
                     }
+                    
+                    // Close the ResultSet
+                    rs.close();
+                    s.close();
                 } catch (SQLException e) {
                     e.printStackTrace(); // Print the exception details for debugging
                     JOptionPane.showMessageDialog(null, "An error occurred. Please try again later.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -281,6 +287,12 @@ public class forgotUsernameMsg extends javax.swing.JPanel {
             } catch (Exception e) {
                 GlassPanePopup.closePopupLast();
                 noWiFiMsg obj2 = new noWiFiMsg();
+                obj2.closeBtnEvnt(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent ae) {
+                        GlassPanePopup.closePopupLast();
+                    }
+                });
                 GlassPanePopup.showPopup(obj2);
             }
 

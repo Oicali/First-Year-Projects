@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
 import settings.GlassPanePopup;
 
@@ -42,7 +43,7 @@ public class noWiFiMsg extends javax.swing.JPanel {
 
         jLabel2 = new javax.swing.JLabel();
         txt = new javax.swing.JLabel();
-        cancelBtn = new components.RoundedButtons();
+        closeBtn = new components.RoundedButtons();
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -57,19 +58,19 @@ public class noWiFiMsg extends javax.swing.JPanel {
         txt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txt.setText("Oops! It seems like there is a connection problem occured.");
 
-        cancelBtn.setBackground(new java.awt.Color(191, 50, 50));
-        cancelBtn.setForeground(new java.awt.Color(255, 255, 255));
-        cancelBtn.setText("Close");
-        cancelBtn.setBorderColor(new java.awt.Color(191, 50, 50));
-        cancelBtn.setBorderPainted(false);
-        cancelBtn.setColor(new java.awt.Color(191, 50, 50));
-        cancelBtn.setColorClick(new java.awt.Color(191, 50, 50));
-        cancelBtn.setColorOver(new java.awt.Color(191, 50, 50));
-        cancelBtn.setFocusPainted(false);
-        cancelBtn.setFont(new java.awt.Font("SansSerif", 0, 16)); // NOI18N
-        cancelBtn.addActionListener(new java.awt.event.ActionListener() {
+        closeBtn.setBackground(new java.awt.Color(191, 50, 50));
+        closeBtn.setForeground(new java.awt.Color(255, 255, 255));
+        closeBtn.setText("Close");
+        closeBtn.setBorderColor(new java.awt.Color(191, 50, 50));
+        closeBtn.setBorderPainted(false);
+        closeBtn.setColor(new java.awt.Color(191, 50, 50));
+        closeBtn.setColorClick(new java.awt.Color(191, 50, 50));
+        closeBtn.setColorOver(new java.awt.Color(191, 50, 50));
+        closeBtn.setFocusPainted(false);
+        closeBtn.setFont(new java.awt.Font("SansSerif", 0, 16)); // NOI18N
+        closeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelBtnActionPerformed(evt);
+                closeBtnActionPerformed(evt);
             }
         });
 
@@ -94,7 +95,7 @@ public class noWiFiMsg extends javax.swing.JPanel {
                 .addContainerGap(58, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(closeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(168, 168, 168))
         );
         layout.setVerticalGroup(
@@ -107,18 +108,21 @@ public class noWiFiMsg extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txt)
                 .addGap(27, 27, 27)
-                .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(closeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
-        GlassPanePopup.closePopupLast();
-    }//GEN-LAST:event_cancelBtnActionPerformed
+    private void closeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_closeBtnActionPerformed
 
+    public void closeBtnEvnt(ActionListener event) {
+        closeBtn.addActionListener(event);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private components.RoundedButtons cancelBtn;
+    private components.RoundedButtons closeBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel txt;
