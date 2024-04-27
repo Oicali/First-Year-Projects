@@ -326,7 +326,19 @@ public class verifyCodeMsg extends javax.swing.JPanel {
     private void verifyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verifyBtnActionPerformed
         timer.stop();
         System.out.println(secondsLeft);
-        GlassPanePopup.closePopupLast();
+
+        String enteredVC = code1.getText() + code2.getText() + code3.getText() + code4.getText() + code5.getText() + code6.getText();
+
+        System.out.println(enteredVC);
+
+        if (enteredVC.equals(forgotPasswordMsg.Code)) {
+            GlassPanePopup.closePopupLast();
+            resetPasswordMsg obj8 = new resetPasswordMsg();
+            GlassPanePopup.showPopup(obj8);
+            forgotPasswordMsg.Code = "";
+        } else {
+            JOptionPane.showMessageDialog(null, "Invalid Verification Code!", "", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_verifyBtnActionPerformed
 
     private void code1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_code1ActionPerformed
@@ -388,12 +400,12 @@ public class verifyCodeMsg extends javax.swing.JPanel {
     private void resendCodeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resendCodeBtnActionPerformed
         try {
             forgotPasswordMsg.emailCode(forgotPasswordMsg.storedEmail);
-            
+
         } catch (Exception ex) {
             Logger.getLogger(verifyCodeMsg.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        JOptionPane.showMessageDialog(null, "   We have sent a new email for the\nverification code. Kindly check your email.", "", JOptionPane.INFORMATION_MESSAGE);
+
+        JOptionPane.showMessageDialog(null, "     We have sent a new email for the\nverification code. Kindly check your email.", "", JOptionPane.INFORMATION_MESSAGE);
         System.out.println("Resend a new code: " + forgotPasswordMsg.Code);
     }//GEN-LAST:event_resendCodeBtnActionPerformed
 

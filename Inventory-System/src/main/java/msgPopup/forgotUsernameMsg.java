@@ -256,7 +256,7 @@ public class forgotUsernameMsg extends javax.swing.JPanel {
                 boolean emailFound = false;
                 try {
                     Statement s = InventorySystem.getDbCon().createStatement();
-                    ResultSet rs = s.executeQuery("SELECT * FROM users WHERE email = '" + findUsername + "'");
+                    ResultSet rs = s.executeQuery("SELECT * FROM users WHERE email = '" + findUsername + "' AND status = 'Active'");
 
                     while (rs.next()) {
                         emailFound = true;
@@ -276,7 +276,7 @@ public class forgotUsernameMsg extends javax.swing.JPanel {
                             Logger.getLogger(forgotUsernameMsg.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     } else {
-                        JOptionPane.showMessageDialog(this, "Sorry, it looks like the email you \n     entered is not registered.", "Email Not Found!", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "   Sorry, it looks like the account of the email\nyou entered is either inactive or not registered.", "Email Not Found!", JOptionPane.ERROR_MESSAGE);
                     }
                     
                     // Close the ResultSet
