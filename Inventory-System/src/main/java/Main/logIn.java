@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.plaf.metal.MetalButtonUI;
+import msgPopup.forgotPasswordMsg;
 import msgPopup.forgotUsernameMsg;
 import settings.GlassPanePopup;
 
@@ -148,6 +149,11 @@ public class logIn extends javax.swing.JFrame {
         forgotPass.setBorderPainted(false);
         forgotPass.setContentAreaFilled(false);
         forgotPass.setFocusPainted(false);
+        forgotPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                forgotPassActionPerformed(evt);
+            }
+        });
 
         License.setFont(new java.awt.Font("SansSerif", 2, 11)); // NOI18N
         License.setForeground(new java.awt.Color(153, 153, 153));
@@ -412,6 +418,11 @@ public class logIn extends javax.swing.JFrame {
         forgotUsernameMsg obj0 = new forgotUsernameMsg();
         GlassPanePopup.showPopup(obj0); 
     }//GEN-LAST:event_forgotUserActionPerformed
+
+    private void forgotPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotPassActionPerformed
+        forgotPasswordMsg obj5 = new forgotPasswordMsg();
+        GlassPanePopup.showPopup(obj5);
+    }//GEN-LAST:event_forgotPassActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
