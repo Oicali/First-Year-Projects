@@ -9,6 +9,7 @@ import java.awt.Shape;
 import java.awt.geom.RoundRectangle2D;
 import java.sql.*;
 import javax.swing.ImageIcon;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -25,12 +26,13 @@ public class logIn extends javax.swing.JFrame {
     public static String username = "";
     public static String selectedRole = "";
     
-
+    
     public logIn() {
         initComponents();
         setIconImage(image.getImage());
         GlassPanePopup.install(this);
         passField.setEchoChar('•');
+        JDialog.setDefaultLookAndFeelDecorated(true);
         
         logInBtn.setUI(new MetalButtonUI() {
             protected Color getDisabledTextColor() {

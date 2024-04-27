@@ -117,10 +117,10 @@ public class forgotUsernameMsg extends javax.swing.JPanel {
                 InventorySystem.closeCon();
             }
 
-            String htmlText = "<h3 style=\"color:black;\"> Find Your Username!</h3>"
+            String htmlText = "<h3 style=\"color:black;\">Find Your Username!</h3>"
                     + "<p style=\"color:black;\">Dear Mr./Mrs. " + storedName + ", </p>"
                     + "<p style=\"color:black;\"> Thank you for reaching us out! We've received your request for your username to log in to our Mark-It Inventory System. </p>"
-                    + "<h4 style=\"color:black;\"> You username is:  <b>" + storedUsername + " </h4> </b>"
+                    + "<p style=\"color:black;\"> You username is:  <strong>" + storedUsername + "</strong> </p>"
                     + "<p style=\"color:black;\"> Please note that this message is generated automatically, so there's no need to reply. If you have any further questions or concerns, feel free to reach out our administrators.</p>"
                     + "<p style=\"color:black;\">Best regards,</p>"
                     + "<p style=\"color:black;\">Mark-It Inventory System </p>";

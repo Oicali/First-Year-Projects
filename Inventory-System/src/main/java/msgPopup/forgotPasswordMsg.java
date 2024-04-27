@@ -123,11 +123,11 @@ public class forgotPasswordMsg extends javax.swing.JPanel {
             
             Code = generateOTP();
             System.out.println("The code is : " + Code);
-
-            String htmlText = "<h3 style=\"color:black;\"> Reset Your Password!</h3>"
+            
+            String htmlText = "<h3 style=\"color:black;\">Reset Your Password!</h3>"
                     + "<p style=\"color:black;\">Dear Mr./Mrs. " + storedName + ", </p>"
                     + "<p style=\"color:black;\"> You have requested to reset your password. To proceed with the password reset process, please use the following verification code.</p>"
-                    + "<h4 style=\"color:black;\"> Verification Code:  <b>" + Code + " </h4> </b>"
+                    + "<p style=\"color:black;\"> Verification Code:  <strong>" + Code + " </strong> </p>"
                     + "<p style=\"color:black;\"> Please enter this code on the password reset page to verify your identity and set a new password. Kindly note that the verification code is valid for 5 minutes. Please ensure that you input the code within this timeframe to avoid expiration and the need to request a new code.</p>"
                     + "<p style=\"color:black;\"> This message is generated automatically, so there's no need to reply. If you did not request this password reset or have any concerns, please contact our support team immediately.</p>"
                     + "<p style=\"color:black;\">Best regards,</p>"

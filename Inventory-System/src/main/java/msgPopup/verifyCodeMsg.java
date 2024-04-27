@@ -18,7 +18,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.text.*;
-import static msgPopup.forgotPasswordMsg.emailCode;
 import settings.GlassPanePopup;
 
 /**
@@ -61,7 +60,7 @@ public class verifyCodeMsg extends javax.swing.JPanel {
                     return; // Only allow one character
                 }
                 super.replace(fb, offset, length, text, attrs);
-                code2.requestFocusInWindow(); // Request focus on pass2
+                code2.requestFocusInWindow(); 
             }
         });
 
@@ -73,7 +72,7 @@ public class verifyCodeMsg extends javax.swing.JPanel {
                     return; // Only allow one character
                 }
                 super.replace(fb, offset, length, text, attrs);
-                code3.requestFocusInWindow(); // Request focus on pass2
+                code3.requestFocusInWindow(); 
             }
         });
 
@@ -85,7 +84,7 @@ public class verifyCodeMsg extends javax.swing.JPanel {
                     return; // Only allow one character
                 }
                 super.replace(fb, offset, length, text, attrs);
-                code4.requestFocusInWindow(); // Request focus on pass2
+                code4.requestFocusInWindow(); 
             }
         });
 
@@ -97,7 +96,7 @@ public class verifyCodeMsg extends javax.swing.JPanel {
                     return; // Only allow one character
                 }
                 super.replace(fb, offset, length, text, attrs);
-                code5.requestFocusInWindow(); // Request focus on pass2
+                code5.requestFocusInWindow(); 
             }
         });
 
@@ -109,7 +108,7 @@ public class verifyCodeMsg extends javax.swing.JPanel {
                     return; // Only allow one character
                 }
                 super.replace(fb, offset, length, text, attrs);
-                code6.requestFocusInWindow(); // Request focus on pass2
+                code6.requestFocusInWindow(); 
             }
         });
 
