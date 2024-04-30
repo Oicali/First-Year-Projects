@@ -111,9 +111,21 @@ public class logIn extends javax.swing.JFrame {
         License = new javax.swing.JButton();
         showPass = new settings.JCheckBoxCustom();
         logInErrorMessage = new javax.swing.JLabel();
+<<<<<<< Updated upstream
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+=======
+        passField = new components.PasswordField();
+        usernameField = new components.TextField();
+        selectRole = new components.Combobox();
+        logInBtn = new components.RoundedButtons();
+        showPass = new components.JCheckBoxCustom();
+        closeBtn = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+>>>>>>> Stashed changes
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Log In");
@@ -320,6 +332,22 @@ public class logIn extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+<<<<<<< Updated upstream
+=======
+        jPanel2.setBackground(new java.awt.Color(15, 106, 191));
+        jPanel2.setLayout(null);
+
+        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Log In to your Account");
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(80, 220, 540, 80);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\jairus\\OneDrive\\Documents\\GitHub\\First-Year-Projects\\Inventory-System\\src\\main\\java\\resources\\logInBg.png")); // NOI18N
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(0, -10, 810, 770);
+
+>>>>>>> Stashed changes
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -437,8 +465,8 @@ public class logIn extends javax.swing.JFrame {
     private javax.swing.JButton exitBtn;
     private javax.swing.JButton forgotPass;
     private javax.swing.JButton forgotUser;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private settings.RoundedButtons logInBtn;
     private javax.swing.JLabel logInErrorMessage;

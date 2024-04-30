@@ -53,8 +53,7 @@ public class progressScreen extends javax.swing.JDialog {
         curvesPanel1.setBackground(new java.awt.Color(255, 255, 255));
         curvesPanel1.setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\jairus\\Documents\\NetBeansProjects\\Inventory-System\\src\\main\\java\\resources\\logoSmall.png")); // NOI18N
-        jLabel1.setText("jLabel1");
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\jairus\\OneDrive\\Documents\\GitHub\\First-Year-Projects\\Inventory-System\\src\\main\\java\\resources\\logoSmall.png")); // NOI18N
         curvesPanel1.add(jLabel1);
         jLabel1.setBounds(220, 50, 100, 100);
 
