@@ -4,6 +4,7 @@
  */
 package msgPopup;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -17,6 +18,9 @@ public class resetPassMsg extends javax.swing.JPanel {
      */
     public resetPassMsg() {
         initComponents();
+        setOpaque(false);
+        txt.setBackground(new Color(0, 0, 0, 0));
+        txt.setOpaque(false);
     }
 
     @Override

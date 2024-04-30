@@ -188,15 +188,14 @@ public class resetPasswordMsg extends javax.swing.JPanel {
                 if (rowsAffected > 0) {
                     forgotPasswordMsg.storedEmail = "";
                     GlassPanePopup.closePopupLast();
+                    resetPassMsg obj9 = new resetPassMsg();
+                    GlassPanePopup.showPopup(obj9);
                 } else {
                     JOptionPane.showMessageDialog(null, "No records were updated. Please check the email address and try again.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
 
                 // Close the ResultSet
                 s.close();
-
-                forgotPasswordMsg.storedEmail = "";
-                GlassPanePopup.closePopupLast();
 
             } catch (SQLException e) {
                 e.printStackTrace(); // Print the exception details for debugging

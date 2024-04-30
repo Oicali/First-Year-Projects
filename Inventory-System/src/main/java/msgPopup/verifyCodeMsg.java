@@ -32,7 +32,17 @@ public class verifyCodeMsg extends javax.swing.JPanel {
     public verifyCodeMsg() {
         initComponents();
         setOpaque(false);
+        txt.setBackground(new Color(0, 0, 0, 0));
+        txt.setOpaque(false);
+        txt1.setBackground(new Color(0, 0, 0, 0));
+        txt1.setOpaque(false);
         code1.requestFocus();
+        code1.setEchoChar((char) 0);
+        code2.setEchoChar((char) 0);
+        code3.setEchoChar((char) 0);
+        code4.setEchoChar((char) 0);
+        code5.setEchoChar((char) 0);
+        code6.setEchoChar((char) 0);
 
         // Set up timer to update countdown label
         timer = new Timer(1000, new ActionListener() {
